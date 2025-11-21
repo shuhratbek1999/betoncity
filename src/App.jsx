@@ -1,13 +1,16 @@
 import { useState } from "react";
-import Form from "./components/Form.jsx";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>Lorem ipsum dolor sit amet.</div>
-      <Form />
+      <Header />
+      <main>
+        <Hero />
+      </main>
     </>
   );
 }

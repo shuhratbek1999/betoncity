@@ -38,7 +38,7 @@ export default function Header() {
 
         <div className="container-base flex items-center justify-between">
           {/* Logo */}
-          <a href="#">
+          <a href="#" className="hidden md:flex">
             <img className="h-10" src={LogoImg} alt="Logo" />
           </a>
 
@@ -95,16 +95,19 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <div className="flex xl:flex-col gap-x-3">
+          <div className="flex items-center max-sm:w-full justify-between max-sm:ml-12 lg:gap-4">
+            <div className="flex flex-col gap-x-3">
               <a
                 href="tel:+74952666924"
-                className="hover:text-secondary/75 underline"
+                className="hover:text-secondary/75 underline text-base"
               >
                 +7 (495) 266 69-24
               </a>
 
-              <a href="#" className="hover:text-secondary/75 underline">
+              <a
+                href="#"
+                className="hover:text-secondary/75 underline text-[11px] lg:text-sm"
+              >
                 zakaz@betoncitystroy.ru
               </a>
             </div>
@@ -125,7 +128,7 @@ export default function Header() {
                 />
               </a>
             </div>
-            <a href="#" className="shrink-0">
+            <a href="#" className="shrink-0 sm:flex hidden">
               <img className="h-12.5" src={YandexReviews} alt="img" />
             </a>
           </div>

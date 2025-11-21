@@ -1,15 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 @import "tailwindcss";
 
-
 @theme {
-  --font-montserrat: 'Montserrat', sans-serif;
-  --font-space-grotesk: 'Space Grotesk', sans-serif;
-  --color-primary: #F6AE3F;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-roman: "Times New Roman";
+  --font-sans: "sans-serif";
+  --font-arial: "Arial";
+  --color-primary: #f6ae3f;
   --color-secondary: #263640;
+  --color-phone: #dfdfdf;
+  --color-check: #979797;
+  --color-orange: #ef9c1c;
+  --text-58px: 58px;
+  --spacing-754: 754px;
+  --spacing-270: 270px;
+  --spacing-298: 298px;
+  --spacing-76: 76px;
+  --spacing-85: 85px;
+  --spacing-52: 52px;
+  --spacing-630: 630px;
+  --spacing-135: 135px;
+  --radius-10: 10px;
 }
-
 
 @layer base {
   html {
@@ -30,14 +44,82 @@
   }
 
   button {
-    @apply cursor-pointer
+    @apply cursor-pointer;
   }
 }
+@layer utilities {
+  /* Hero text font-size */
+  .text-hero {
+    font-size: var(--text-58px);
+  }
+  .text-3xxl {
+    font-size: 32px;
+  }
+  /* H1 width */
+  .w-754 {
+    width: var(--spacing-754);
+  }
+  .w-270 {
+    width: var(--spacing-270);
+  }
+  .w-630 {
+    width: var(--spacing-630);
+  }
+  .w-135 {
+    width: var(--spacing-135);
+  }
+  .h-135 {
+    height: var(--spacing-135);
+  }
+  .w-85 {
+    width: var(--spacing-85);
+  }
+  .h-85 {
+    height: var(--spacing-85);
+  }
+  .h-76 {
+    height: var(--spacing-76);
+  }
+  .h-52 {
+    height: var(--spacing-52);
+  }
+  .h-298 {
+    height: var(--spacing-298);
+  }
+  .rounded-10 {
+    border-radius: var(--radius-10);
+  }
+  @layer utilities {
+    @keyframes rotate-circle {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+    .animate-rotate-circle {
+      animation: rotate-circle 20s linear infinite;
+    }
+  }
+  @keyframes bounce-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
 
+  .animate-bounce-y {
+    animation: bounce-y 1.6s ease-in-out infinite;
+  }
+}
 @utility container-base {
   @apply w-full max-w-235 xl:max-w-340 mx-auto px-5;
 }
 
 @utility hover-primary {
-  @apply transition duration-300 hover:bg-primary/80
+  @apply transition duration-300 hover:bg-primary/80;
 }

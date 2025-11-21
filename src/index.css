@@ -13,12 +13,14 @@
   --color-phone: #dfdfdf;
   --color-check: #979797;
   --color-orange: #ef9c1c;
+  --color-gray-soft: #7b7b7b;
   --text-58px: 58px;
   --spacing-754: 754px;
   --spacing-270: 270px;
   --spacing-298: 298px;
   --spacing-76: 76px;
   --spacing-85: 85px;
+  --spacing-90: 90px;
   --spacing-52: 52px;
   --spacing-630: 630px;
   --spacing-135: 135px;
@@ -76,6 +78,12 @@
   }
   .h-85 {
     height: var(--spacing-85);
+  }
+  .w-90 {
+    width: var(--spacing-90);
+  }
+  .h-90 {
+    height: var(--spacing-90);
   }
   .h-76 {
     height: var(--spacing-76);

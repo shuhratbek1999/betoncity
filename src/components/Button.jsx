@@ -6,7 +6,7 @@ export default function Button({
   className = "",
 }) {
   const baseStyle =
-    "px-4 py-2 font-medium transition-colors duration-300 focus:outline-none";
+    "px-4 py-2 transition-colors duration-300 focus:outline-none";
 
   return (
     <button

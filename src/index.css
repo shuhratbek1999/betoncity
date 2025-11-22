@@ -13,16 +13,24 @@
   --color-phone: #dfdfdf;
   --color-check: #979797;
   --color-orange: #ef9c1c;
+  --color-price-btn: #b8bcbf;
   --color-gray-soft: #7b7b7b;
   --text-58px: 58px;
+  --text-22: 22px;
+  --text-32: 32px;
+  --text-18: 18px;
   --spacing-754: 754px;
   --spacing-270: 270px;
   --spacing-298: 298px;
   --spacing-76: 76px;
   --spacing-85: 85px;
   --spacing-90: 90px;
+  --spacing-200: 200px;
+  --spacing-306: 306px;
   --spacing-52: 52px;
   --spacing-630: 630px;
+  --spacing-435: 435px;
+  --spacing-550: 550px;
   --spacing-135: 135px;
   --radius-10: 10px;
 }
@@ -70,8 +78,20 @@
   .w-135 {
     width: var(--spacing-135);
   }
+  .w-306 {
+    width: var(--spacing-306);
+  }
   .h-135 {
     height: var(--spacing-135);
+  }
+  .h-200 {
+    height: var(--spacing-200);
+  }
+  .h-550 {
+    height: var(--spacing-550);
+  }
+  .h-435 {
+    height: var(--spacing-435);
   }
   .w-85 {
     width: var(--spacing-85);
@@ -130,4 +150,8 @@
 
 @utility hover-primary {
   @apply transition duration-300 hover:bg-primary/80;
+}
+/* Container */
+.react-international-phone-input-container {
+  @apply bg-transparent;
 }

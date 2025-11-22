@@ -268,7 +268,7 @@ const Calculator = () => {
               placeholder="Ваше имя"
               className="h-12 bg-phone border-none focus:outline-none indent-3 text-black font-normal text-base rounded-10 lg:w-full"
             />
-            <PhoneNumberInput className="lg:w-630" />
+            <PhoneNumberInput className="lg:w-630 rounded-10" />
             <div className="checkbox flex items-center gap-4">
               <label className="inline-flex items-center gap-3 cursor-pointer">
                 <FancyCheckbox

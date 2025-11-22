@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="form">
           <div className="flex flex-col sm:flex-row gap-5 my-4">
             <PhoneNumberInput
-              className="h-76 lg:w-270"
+              className="h-76 lg:w-270 rounded-10"
               value={phone}
               onChange={setPhone}
             />
@@ -55,7 +55,7 @@ export default function Hero() {
             </label>
           </div>
         </div>
-        <div className="relative lg:w-135 lg:h-135 max-sm:w-85 max-sm:h-85 flex items-center justify-center left-1/2 -translate-y-1/2">
+        <div className="relative lg:w-135 lg:h-135 max-sm:w-85 max-sm:h-85 flex items-center justify-center left-[43%] -translate-y-[5]">
           <div className="absolute inset-0 bg-black/50 rounded-full"></div>
           <div className="absolute w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
             <div className="absolute inset-0 bg-gray-100/30 rounded-full"></div>

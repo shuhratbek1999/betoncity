@@ -15,6 +15,7 @@ import Info from "./sections/Info";
 import CalculationBiton from "./components/CalculationBiton";
 import Accordion from "./components/Accordion";
 import Footer from "./sections/Footer";
+import Adress from "./sections/Adress";
 function App() {
   const [count, setCount] = useState(0);
   const faqData = [
@@ -101,6 +102,7 @@ function App() {
             <Accordion key={item.id} title={item.title} text={item.text} />
           ))}
         </div>
+        <Adress />
         <Footer />
       </main>
     </>

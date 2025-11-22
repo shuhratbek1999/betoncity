@@ -329,7 +329,7 @@ const Prices = () => {
     getTextBtn(1);
   }, []);
   return (
-    <div className="container-base">
+    <div className="container-base" id="Цены">
       <h1 className="lg:text-5xl font-bold font-space-grotesk text-center">
         Цены на бетон в Москве и МО
       </h1>

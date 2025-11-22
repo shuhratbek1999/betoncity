@@ -39,11 +39,11 @@ const Advantages = () => {
     },
   ];
   return (
-    <div className="container-base my-10">
-      <h1 className="text-center font-space-grotesk text-[32px] lg:text-5xl text-secondary font-bold">
+    <div className="container-base my-10" id="О нас">
+      <h1 className="text-center font-space-grotesk text-32 lg:text-5xl text-secondary font-bold">
         Преимущества
       </h1>
-      <h4 className="text-center text-[22px] font-montserrat font-normal text-gray-soft my-6">
+      <h4 className="text-center text-22 font-montserrat font-normal text-gray-soft my-6">
         Смотрите чем мы отличаемся от других заводов-производителей
       </h4>
       <div className="advantages-list grid grid-cols-1 sm:grid-cols-3 :*:border-b *:border-secondary">

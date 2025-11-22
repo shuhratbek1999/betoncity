@@ -27,7 +27,7 @@ export default function PhoneNumberInput({ value, onChange, setError }) {
         value={value}
         onChange={validate}
         numberInputProps={{
-          className: "bg-transparent focus:outline-none h-12",
+          className: "bg-transparent focus:outline-none h-76",
         }}
       />
     </div>

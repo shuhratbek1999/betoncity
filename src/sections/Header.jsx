@@ -1,3 +1,4 @@
+import { useState } from "react";
 import LogoImg from "../assets/icons/logo.png";
 import YandexReviews from "../assets/images/yandex-reviews.png";
 
@@ -6,14 +7,88 @@ const navItems = [
     label: "Продукция",
     children: [
       {
-        label: "Категория 1",
-        children: ["Option 1", "Option 2", "Option 3"],
+        label: "На гравии",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
       },
       {
-        label: "Категория 2",
+        label: "На граните",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
       },
       {
-        label: "Категория 3",
+        label: "Растворы",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
+      },
+      {
+        label: "Тощий бетон",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
+      },
+      {
+        label: "Пескобетон",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
+      },
+      {
+        label: "Керамзитобетон",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
+      },
+      {
+        label: "Цементно-песчаная смесь",
+        children: [
+          "М100 (B7.5)",
+          "М150 (B10/12.5)",
+          "М200 (B15)",
+          "М250 (B20)",
+          "М300 (B22.5)",
+          "М350 (B25)",
+          "М400 (B30)",
+        ],
       },
     ],
   },
@@ -24,11 +99,17 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
   return (
     <header className="bg-white sticky top-0 left-0 z-50 w-full py-2 shadow-sm">
       <div className="relative">
         {/* Mobile Menu BTN */}
-        <button className="absolute xl:hidden top-1/2 -translate-y-1/2 z-10">
+        <button
+          onClick={() => setOpen(true)}
+          className={`absolute xl:hidden top-1/2 -translate-y-1/2 z-10 ${
+            open ? "hidden" : "flex"
+          }`}
+        >
           <img
             className="size-15"
             src="https://optim.tildacdn.com/tild3937-3138-4330-b432-366437346534/-/resize/72x/-/format/webp/menu.png.webp"
@@ -36,7 +117,11 @@ export default function Header() {
           />
         </button>
 
-        <div className="container-base flex items-center justify-between">
+        <div
+          className={`container-base flex items-center justify-between ${
+            open ? "hidden" : "flex"
+          }`}
+        >
           {/* Logo */}
           <a href="#" className="hidden md:flex">
             <img className="h-10" src={LogoImg} alt="Logo" />
@@ -48,7 +133,7 @@ export default function Header() {
               <div key={i} className="relative group">
                 {/* Main link */}
                 <a
-                  href="#"
+                  href={`#${i != 0 ? item.label : ""}`}
                   className={`flex items-center gap-1.5 ${
                     item.children
                       ? "after:content-[''] after:border-4 after:border-transparent after:border-t-current after:mt-0.75 after:transition-transform after:duration-300 group-hover:after:rotate-180 group-hover:after:mt-0"
@@ -60,7 +145,7 @@ export default function Header() {
 
                 {/* Level 1 dropdown */}
                 {item.children && (
-                  <div className="absolute left-0 top-full mt-2 w-52 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="absolute left-0 top-full mt-2 w-56 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <ul className="py-2">
                       {item.children.map((sub, j) => (
                         <li
@@ -75,7 +160,7 @@ export default function Header() {
 
                           {/* Level 2 dropdown */}
                           {sub.children && (
-                            <ul className="absolute left-full top-0 ml-2 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+                            <ul className="absolute left-full top-0 h-auto w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
                               {sub.children.map((opt, k) => (
                                 <li
                                   key={k}
@@ -132,6 +217,88 @@ export default function Header() {
               <img className="h-12.5" src={YandexReviews} alt="img" />
             </a>
           </div>
+        </div>
+        <div
+          className={`mobile_modal w-full bg-gray-50 z-50 h-screen ${
+            open ? "flex flex-col z-50" : "hidden"
+          }`}
+        >
+          <div className="modal-top flex items-center h-16 gap-2 w-full px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              focusable="false"
+              onClick={() => setOpen(false)}
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            <img
+              src="https://static.tildacdn.com/tild6465-3839-4534-b334-323964396565/image_10.png"
+              alt="logo img"
+              className="w-60 h-10"
+            />
+          </div>
+          <nav className="sm:hidden flex flex-col items-start gap-8 font-medium px-6 py-4">
+            {navItems.map((item, i) => (
+              <div key={i} className="relative group border-b-2 pb-4 w-full">
+                {/* Main link */}
+                <a
+                  onClick={() => setOpen(false)}
+                  href={`#${i != 0 ? item.label : ""}`}
+                  className={`flex items-center gap-1.5 ${
+                    item.children
+                      ? "after:content-[''] after:border-4 after:border-transparent after:border-t-current after:mt-0.75 after:transition-transform after:duration-300 group-hover:after:rotate-180 group-hover:after:mt-0"
+                      : ""
+                  } transition hover:text-secondary/75`}
+                >
+                  {item.label}
+                </a>
+
+                {/* Level 1 dropdown */}
+                {item.children && (
+                  <div className="absolute left-0 top-full mt-2 w-52 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <ul className="py-2">
+                      {item.children.map((sub, j) => (
+                        <li
+                          key={j}
+                          className={`relative group/sub px-4 py-2 hover:bg-gray-50 cursor-pointer ${
+                            sub.children
+                              ? "flex items-center justify-between"
+                              : ""
+                          }`}
+                        >
+                          {sub.label}
+
+                          {/* Level 2 dropdown */}
+                          {sub.children && (
+                            <ul className="absolute left-full top-0 ml-2 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200">
+                              {sub.children.map((opt, k) => (
+                                <li
+                                  key={k}
+                                  className="px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                                >
+                                  {opt}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
         </div>
       </div>
     </header>

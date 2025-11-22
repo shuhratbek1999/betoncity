@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import FancyCheckbox from "../components/checkbox";
 export default function Hero() {
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
   const [someState, setSomeState] = useState(1);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,15 +13,22 @@ export default function Hero() {
   };
   return (
     <div
-      className="relative overflow-hidden h-[calc(100vh-64px)] flex flex-col justify-center bg-cover bg-center"
+      className="
+    relative overflow-hidden 
+    h-[calc(100vh-64px)]
+    flex flex-col justify-start
+    bg-no-repeat
+    bg-center
+    bg-cover         
+  "
       style={{ backgroundImage: `url(${HeroBgImg})` }}
     >
       <div className="container-base">
-        <h1 className="text-secondary w-full lg:w-754 text-3xl sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold my-4 text-center lg:text-left">
+        <h1 className="text-secondary w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold my-12 text-center lg:text-left">
           ПРОИЗВОДСТВО <br /> И ДОСТАВКА БЕТОНА <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
-        <div className="font-normal lg:text-2xl">
+        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl">
           Напрямую с завода
           <strong className="ml-1">
             от 2 200 р/м3 по{" "}
@@ -35,6 +43,7 @@ export default function Hero() {
               className="h-76 lg:w-270 rounded-10"
               value={phone}
               onChange={setPhone}
+              setError={setError}
             />
             <Button
               onClick={() => alert("Secondary clicked")}
@@ -55,7 +64,7 @@ export default function Hero() {
             </label>
           </div>
         </div>
-        <div className="relative lg:w-135 lg:h-135 max-sm:w-85 max-sm:h-85 flex items-center justify-center left-[43%] -translate-y-[5]">
+        <div className="relative lg:w-135 lg:h-135 max-sm:w-85 max-sm:h-85 flex items-center justify-center left-[43%] -bottom-96 sm:bottom-2">
           <div className="absolute inset-0 bg-black/50 rounded-full"></div>
           <div className="absolute w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
             <div className="absolute inset-0 bg-gray-100/30 rounded-full"></div>

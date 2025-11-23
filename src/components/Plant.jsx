@@ -44,47 +44,51 @@ const Plant = () => {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="container-base relative top-60 mb-60 lg:mb-40">
-      <h1 className="xl:text-5xl text-32  text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
-        Проведем экскурсию по заводу
-      </h1>
-      <h4 className="font-space-grotesk  text-center sm:text-left font-normal lg:text-2xl text-gray-soft my-4">
-        а так же ответим на все вопросы которые могли <br /> у вас возникнуть
-      </h4>
-      <div className="buttons ml-1 flex flex-col mx-auto md:flex-row gap-4 my-4 lg::ml-0">
-        <div className="phone">
-          <PhoneNumberInput
-            className="h-52 lg:w-270 rounded-10"
-            value={phone}
-            onChange={setPhone} // 🔥 SHART!
-            error={error}
-            setError={setError}
-          />
-          {error && <span className="text-red-500 text-xs -mt-3">{error}</span>}
+    <div className="container-base my-32 flex flex-col-reverse items-center lg:flex-row jlg:ustify-between">
+      <div className="content">
+        <h1 className="xl:text-5xl text-32  text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
+          Проведем экскурсию по заводу
+        </h1>
+        <h4 className="font-space-grotesk  text-center sm:text-left font-normal lg:text-2xl text-gray-soft my-4">
+          а так же ответим на все вопросы которые могли <br /> у вас возникнуть
+        </h4>
+        <div className="buttons w-full ml-1 flex flex-col mx-auto lg:flex-row gap-4 my-4 lg::ml-0">
+          <div className="phone max-md:w-1/2">
+            <PhoneNumberInput
+              className="h-52 lg:w-full rounded-10"
+              value={phone}
+              onChange={setPhone} // 🔥 SHART!
+              error={error}
+              setError={setError}
+            />
+            {error && (
+              <span className="text-red-500 text-xs -mt-3">{error}</span>
+            )}
+          </div>
+          <Button
+            onClick={clickModal}
+            className="bg-orange text-nowrap h-52 max-md:w-1/2 rounded-10 text-white px-4 font-bold"
+          >
+            Записаться на экскурсию
+          </Button>
         </div>
-        <Button
-          onClick={clickModal}
-          className="bg-orange h-52 rounded-10 text-white px-4 font-bold"
-        >
-          Записаться на экскурсию
-        </Button>
-      </div>
-      <div className="checked ml-1 ">
-        <label className="inline-flex items-center gap-3 cursor-pointer">
-          <FancyCheckbox
-            checked={someState}
-            onChange={(v) => setSomeState(v)}
-          />
-          <span className="inline-block text-sm text-black font-arial">
-            Даю согласие на обработку своих персональных данных
-          </span>
-        </label>
-        {checkError && (
-          <span className="text-red-500 text-xs block">{checkError}</span>
-        )}
+        <div className="checked ml-1 ">
+          <label className="inline-flex items-center gap-3 cursor-pointer">
+            <FancyCheckbox
+              checked={someState}
+              onChange={(v) => setSomeState(v)}
+            />
+            <span className="inline-block text-sm text-black font-arial">
+              Даю согласие на обработку своих персональных данных
+            </span>
+          </label>
+          {checkError && (
+            <span className="text-red-500 text-xs block">{checkError}</span>
+          )}
+        </div>
       </div>
       <img
-        className="absolute right-28 -top-56 lg:-top-12 w-8/12 lg:w-1/3 object-contain"
+        className=" object-contain md:w-500 md:h-298"
         src="https://static.tildacdn.com/tild6430-6233-4662-a133-383530376361/Layer_1_5.png"
         alt="images"
       />

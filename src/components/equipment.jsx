@@ -25,7 +25,7 @@ const Equipment = () => {
     },
   ];
   return (
-    <div className="container-base mb-12 lg:h-[600px] flex flex-col lg:flex-row justify-center mt-40 sm:mt-80">
+    <div className="container-base mb-12 lg:h-[600px] flex flex-col lg:flex-row justify-center">
       <div className="info w-full lg:w-6/12">
         <h1 className="font-space-grotesk text-center sm:text-left font-bold text-32 lg:text-5xl text-secondary">
           У нас есть вся необходимая техника

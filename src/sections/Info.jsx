@@ -42,9 +42,9 @@ const Info = () => {
             key={item.id}
             className={`${
               index % 2 != 0 ? "sm:flex-row-reverse" : ""
-            } flex gap-8 flex-col sm:flex-row`}
+            } flex gap-8 flex-col sm:flex-row sm:justify-between`}
           >
-            <div className="w-full sm:w-1/2">
+            <div className="w-full sm:w-[48%]">
               <h1 className="font-space-grotesk leading-10 xl:leading-16 font-bold text-32 lg:text-5xl text-secondary">
                 {item.title}
               </h1>
@@ -55,11 +55,15 @@ const Info = () => {
                 {item.info}
               </p>
             </div>
-            <div className="images w-full sm:w-1/2">
+            <div
+              className={`images w-full sm:w-[48%] border-[3px] border-orange rounded-10 relative`}
+            >
               <img
                 src={item.img}
                 alt={item.title}
-                className="rounded-10 object-contain"
+                className={`${
+                  index % 2 != 0 ? "left-4 -top-4" : "-left-4 -top-4"
+                } rounded-10 object-cover sm:absolute h-full w-full`}
               />
             </div>
           </div>

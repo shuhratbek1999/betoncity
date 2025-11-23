@@ -155,3 +155,21 @@
 .react-international-phone-input-container {
   @apply bg-transparent;
 }
+.react-international-phone-country-selector-button {
+  background-color: transparent !important;
+}
+
+.map-dark-filter {
+  filter: grayscale(10%) saturate(70%) brightness(45%) contrast(112%);
+  -webkit-filter: grayscale(10%) saturate(70%) brightness(45%) contrast(112%);
+}
+.map-dark-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  mix-blend-mode: multiply;
+}
+.map-marker-bright {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}

@@ -17,7 +17,8 @@ import Accordion from "./components/Accordion";
 import Footer from "./sections/Footer";
 import Adress from "./sections/Adress";
 function App() {
-  const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [cookie, setCookie] = useState(true);
   const faqData = [
     {
       id: 1,
@@ -73,6 +74,14 @@ function App() {
         <Hero />
         <Calculator />
         <Experience />
+        <div
+          className="img h-60 sm:h-435 w-full"
+          style={{
+            backgroundImage: `url('https://static.tildacdn.com/tild3863-6634-4531-a364-363333646230/_846.svg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
         <Prices />
         <div className="bg-[radial-gradient(#cfcfcf_1px,transparent_1px)] bg-size-[40px_40px]">
           <Advantages />
@@ -103,8 +112,60 @@ function App() {
           ))}
         </div>
         <Adress />
-        <Footer />
       </main>
+      <Footer />
+      <div className="fixed bottom-0 right-0 sm:right-4">
+        <div
+          className={`${
+            cookie ? "flex" : "hidden"
+          } info w-full sm:w-550 h-52 bg-[#ebebeb] items-center justify-around rounded-md p-2`}
+        >
+          <h4 className="font-montserrat text-center sm:text-left text-[15px] text-secondary font-light">
+            Пользуясь сайтом, вы принимаете политику cookie
+          </h4>
+          <button
+            onClick={() => setCookie(false)}
+            className="rounded-sm border border-gray-soft h-8 w-14"
+          >
+            OK
+          </button>
+        </div>
+        <div
+          className={`${
+            open ? "-top-28" : "-top-14"
+          } icon w-14 h-14 rounded-full flex justify-center items-center absolute right-6 cursor-pointer`}
+          onClick={() => setOpen(true)}
+        >
+          <img
+            src="https://static.tildacdn.com/tild3862-6230-4032-a436-323564633964/Group.svg"
+            alt="icon phone"
+          />
+        </div>
+        <div
+          className={`${
+            open ? "flex" : "hidden"
+          } icon w-14 h-14 rounded-full bg-white justify-center items-center absolute -top-14 right-6 cursor-pointer`}
+          onClick={() => setOpen(false)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20px"
+            height="20px"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            focusable="false"
+            onClick={() => setOpen(false)}
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+      </div>
     </>
   );
 }

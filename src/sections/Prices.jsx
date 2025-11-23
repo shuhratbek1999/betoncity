@@ -269,8 +269,8 @@ const Prices = () => {
       },
     ];
   const [prices, setServices] = useState([]);
-  const [someState, setSomeState] = useState(false);
   const [servicesId, setService] = useState(1);
+  const [someState, setSomeState] = useState(false);
   const [open, setOpen] = useState(false);
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
@@ -329,7 +329,7 @@ const Prices = () => {
     getTextBtn(1);
   }, []);
   return (
-    <div className="container-base" id="Цены">
+    <div className="container-base mt-10" id="Цены">
       <h1 className="lg:text-5xl font-bold font-space-grotesk text-center">
         Цены на бетон в Москве и МО
       </h1>

@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import PhoneNumberInput from "./Phone";
 import FancyCheckbox from "./checkbox";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import Modal from "./Modal";
 const Calculator = () => {
   let products = [
       {
@@ -65,7 +67,13 @@ const Calculator = () => {
     ];
   const [percent, setPercent] = useState(0);
   const [btn, setBtn] = useState(1);
-  const [someState, setSomeState] = useState(1);
+  const [someState, setSomeState] = useState(false);
+  const [modalCheck, setmodalCheck] = useState(false);
+  const [firstName, setfirstName] = useState("");
+  const [open, setOpen] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
+  const [errname, setNameError] = useState("");
   const [text, setText] = useState("Выберете вид продукции");
   const increase = (btn) => {
     setPercent((prev) => {
@@ -107,6 +115,35 @@ const Calculator = () => {
     });
     setBtn("6");
   };
+  const validatePhone = () => {
+    if (!phone) {
+      setError("Введите номер телефона");
+      return false;
+    }
+
+    if (!isValidPhoneNumber(phone)) {
+      setError("Неверный номер телефона");
+      return false;
+    }
+
+    setError("");
+    return true;
+  };
+  const validateName = () => {
+    if (firstName.length == 0) {
+      setNameError("Введите наме");
+      return false;
+    }
+    return true;
+  };
+  const clickModal = () => {
+    // console.log(validateName(), validatePhone());
+
+    if (validatePhone() && validateName()) {
+      setOpen(true);
+    }
+    console.log("Yuborildi:", phone);
+  };
   const getText = (key) => {
     switch (key) {
       case "1":
@@ -125,6 +162,12 @@ const Calculator = () => {
         break;
     }
   };
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://smartcaptcha.yandexcloud.net/captcha.js";
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <div className="container-base p-4">
       <h1 className="text-secondary font-bold font-space-grotesk my-8 lg:text-5xl text-center">
@@ -264,11 +307,24 @@ const Calculator = () => {
           </div>
           <form action="" className="flex flex-col gap-4 lg:w-1/2">
             <input
+              onChange={(e) => setfirstName(e.target.value)}
+              value={firstName}
               type="text"
               placeholder="Ваше имя"
-              className="h-12 bg-phone border-none focus:outline-none indent-3 text-black font-normal text-base rounded-10 lg:w-full"
+              className="h-52 bg-phone border-none focus:outline-none indent-3 text-black font-normal text-base rounded-10 lg:w-full"
             />
-            <PhoneNumberInput className="lg:w-630 rounded-10" />
+            {errname && (
+              <span className="text-red-500 text-xs -mt-3">{errname}</span>
+            )}
+            <PhoneNumberInput
+              className="h-52 lg:w-630 rounded-10"
+              value={phone}
+              onChange={setPhone}
+              setError={setError}
+            />
+            {error && (
+              <span className="text-red-500 text-xs -mt-3">{error}</span>
+            )}
             <div className="checkbox flex items-center gap-4">
               <label className="inline-flex items-center gap-3 cursor-pointer">
                 <FancyCheckbox
@@ -280,7 +336,13 @@ const Calculator = () => {
                 </span>
               </label>
             </div>
-            <button className="w-full h-52 lg:text-base hover:bg-white hover:text-orange rounded-10 bg-orange text-white font-semibold border border-orange border-solid">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                clickModal();
+              }}
+              className="w-full h-52 lg:text-base hover:bg-white hover:text-orange rounded-10 bg-orange text-white font-semibold border border-orange border-solid"
+            >
               РАССЧИТАТЬ СТОИМОСТЬ
             </button>
           </form>
@@ -312,6 +374,59 @@ const Calculator = () => {
           </div>
         </div>
       </div>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <div className="content">
+          <h1 className="text-center font-arial text-xl text-[#222222] font-light pb-5">
+            Поставьте галочку, кликнув на квадратик, чтобы мы знали, что вы не
+            робот
+          </h1>
+          <div className="robot border-t border-b border-gray-200 py-4">
+            <label className="inline-flex items-center gap-x-3 cursor-pointer">
+              <FancyCheckbox
+                checked={modalCheck}
+                onChange={(v) => setmodalCheck(v)}
+              />
+              <span className="inline-block text-sm font-space-grotesk">
+                <span className="text-base font-bold">Я не робот</span> <br />
+                <span>Нажмите, чтобы продолжить</span>
+              </span>
+            </label>
+            <div className="flex justify-between items-center">
+              <a href="#" className="text-sm">
+                SmartCaptcha by Yandex Cloud
+              </a>
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12 19.5C16.1421 19.5 19.5 16.1421 19.5 12C19.5 7.85786 16.1421 4.5 12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5ZM12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM12.75 15V16.5H11.25V15H12.75ZM10.5 10.4318C10.5 9.66263 11.1497 9 12 9C12.8503 9 13.5 9.66263 13.5 10.4318C13.5 10.739 13.3151 11.1031 12.9076 11.5159C12.5126 11.9161 12.0104 12.2593 11.5928 12.5292L11.25 12.7509V14.25H12.75V13.5623C13.1312 13.303 13.5828 12.9671 13.9752 12.5696C14.4818 12.0564 15 11.3296 15 10.4318C15 8.79103 13.6349 7.5 12 7.5C10.3651 7.5 9 8.79103 9 10.4318H10.5Z"
+                    fill="#080341"
+                  ></path>{" "}
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="smart-captcha"
+          data-sitekey="YOUR_SITE_KEY"
+          data-callback="onVerify"
+        />
+      </Modal>
     </div>
   );
 };

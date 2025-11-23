@@ -60,7 +60,7 @@ const Advantages = () => {
           >
             <img src={a.img} alt={a.title} className="lg:w-8/12 lg:h-200" />
 
-            <h2 className="text-center font-space-grotesk lg:text-2xl text-secondary font-bold w-8/12 my-4">
+            <h2 className="text-center font-space-grotesk text-2xl text-secondary font-bold w-8/12 my-4">
               {a.title}
             </h2>
 

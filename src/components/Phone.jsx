@@ -1,33 +1,35 @@
-import React from "react";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
-export default function PhoneNumberInput({ value, onChange, setError }) {
+export default function PhoneNumberInput({
+  value,
+  onChange,
+  error,
+  setError = () => {}, // 🔥 DEFAULT VALUE QO‘YDIM XATO CHIQMASIN
+  className = "",
+}) {
   const validate = (val) => {
-    onChange(val);
+    if (onChange) onChange(val);
 
-    if (!val) {
-      setError("Введите номер телефона");
-      return;
-    }
+    if (!val) return setError("Введите номер телефона");
+    if (val.length < 8) return setError("Неверный номер телефона");
 
-    if (isValidPhoneNumber(val)) {
-      setError("");
-    } else {
-      setError("Неверный номер телефона");
-    }
+    setError("");
   };
 
   return (
-    <div className="bg-phone flex items-center px-4 rounded-10">
+    <div className={`bg-phone flex items-center px-4 rounded-10 ${className}`}>
       <PhoneInput
-        defaultCountry="UZ"
-        international
-        withCountryCallingCode
+        defaultCountry="uz"
         value={value}
         onChange={validate}
+        className="w-full"
         numberInputProps={{
-          className: "bg-transparent focus:outline-none h-76",
+          className: "rounded-md px-4 focus:outline-none bg-transparent", // my Tailwind classes
+        }}
+        inputProps={{
+          required: true,
+          className: "bg-transparent focus:outline-none",
         }}
       />
     </div>

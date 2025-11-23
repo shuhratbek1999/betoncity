@@ -49,7 +49,7 @@ const LaboratoryTesting = () => {
   ];
   return (
     <div className="container-base my-10">
-      <h1 className="text-32 lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
+      <h1 className="text-3xl lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Лабораторные испытания продукции
       </h1>
       <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-24 mt-4">
@@ -86,7 +86,7 @@ const LaboratoryTesting = () => {
         ))}
       </div>
       <nav className="my-12 w-full flex justify-center">
-        <ul className="flex items-center w-full sm:w-10/12 justify-between gap-2 sm:gap-0 sm:justify-between flex-wrap">
+        <ul className="flex items-center w-full sm:w-10/12 justify-between gap-x-2 gap-y-6 sm:gap-0 sm:justify-between flex-wrap">
           {experiences.map((ex) => (
             <li
               key={ex.id}

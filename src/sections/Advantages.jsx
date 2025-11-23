@@ -39,7 +39,7 @@ const Advantages = () => {
     },
   ];
   return (
-    <div className="container-base my-10" id="О нас">
+    <div className="container-base my-20" id="О нас">
       <h1 className="text-center font-space-grotesk text-32 lg:text-5xl text-secondary font-bold">
         Преимущества
       </h1>

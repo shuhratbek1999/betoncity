@@ -47,22 +47,15 @@ export default function Hero() {
   };
   return (
     <div
-      className="
-    relative overflow-hidden 
-    h-[calc(100vh-64px)]
-    flex flex-col justify-start
-    bg-no-repeat
-    bg-center
-    bg-cover         
-  "
+      className="relative overflow-hidden h-[calc(100vh-64px)] flex flex-col justify-start bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${HeroBgImg})` }}
     >
       <div className="container-base">
-        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold my-8 text-center lg:text-left">
+        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-14 text-center lg:text-left">
           ПРОИЗВОДСТВО <br /> И ДОСТАВКА БЕТОНА <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
-        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl">
+        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl my-4">
           Напрямую с завода
           <strong className="ml-1">
             от 2 200 р/м3 по{" "}
@@ -87,7 +80,7 @@ export default function Hero() {
             </div>
             <Button
               onClick={clickModal}
-              className="lg:w-270 h-76 bg-primary px-3.5 rounded-10 text-white text-base"
+              className="lg:w-270 h-76 bg-primary px-3.5 rounded-10 text-white text-base font-bold text-nowrap"
             >
               Получить расчет стоимости
             </Button>
@@ -98,7 +91,7 @@ export default function Hero() {
                 checked={someState}
                 onChange={(v) => setSomeState(v)}
               />
-              <span className="inline-block text-xs font-space-grotesk text-check">
+              <span className="inline-block text-sm font-space-grotesk text-secondary">
                 Даю согласие на обработку своих персональных данных
               </span>
             </label>

@@ -53,7 +53,7 @@ const Plant = () => {
           а так же ответим на все вопросы которые могли <br /> у вас возникнуть
         </h4>
         <div className="buttons w-full ml-1 flex flex-col mx-auto lg:flex-row gap-4 my-4 lg::ml-0">
-          <div className="phone max-md:w-1/2">
+          <div className="phone max-sm:w-full max-md:w-1/2">
             <PhoneNumberInput
               className="h-52 lg:w-full rounded-10"
               value={phone}
@@ -67,7 +67,7 @@ const Plant = () => {
           </div>
           <Button
             onClick={clickModal}
-            className="bg-orange text-nowrap h-52 max-md:w-1/2 rounded-10 text-white px-4 font-bold"
+            className="bg-orange text-nowrap h-52 max-sm:w-full max-md:w-1/2 rounded-10 text-white px-4 font-bold"
           >
             Записаться на экскурсию
           </Button>

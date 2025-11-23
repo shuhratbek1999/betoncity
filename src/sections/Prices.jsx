@@ -342,7 +342,7 @@ const Prices = () => {
               servicesId == s.id
                 ? "bg-orange text-white"
                 : "bg-white text-black"
-            } rounded-xl whitespace-nowrap transition-all delay-200 ease-in-out text-base font-space-grotesk font-normal border border-price-btn hover:bg-orange hover:text-white hover:border-orange`}
+            } rounded-xl whitespace-nowrap px-6 transition-all delay-200 ease-in-out text-base font-space-grotesk font-normal border border-price-btn hover:bg-orange hover:text-white hover:border-orange`}
           >
             {s.name}
           </Button>
@@ -366,7 +366,7 @@ const Prices = () => {
       <div className="footer-btn flex justify-center items-center">
         <Button
           onClick={() => setOpen(true)}
-          className="bg-orange text-white rounded-10 shadow-[0px_0px_10px_#0000001a] text-sm font-space-grotesk"
+          className="bg-orange text-white px-6 h-[45px] rounded-10 shadow-[0px_0px_10px_#0000001a] text-sm font-space-grotesk"
         >
           {textes}
         </Button>

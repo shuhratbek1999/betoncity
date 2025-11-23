@@ -60,7 +60,7 @@ const CalculationBiton = () => {
         </h4>
         <Button
           onClick={() => setOpen(true)}
-          className="text-[#383838] font-bold font-space-grotesk rounded-10 bg-white"
+          className="text-[#383838] font-bold px-4 font-space-grotesk rounded-10 bg-white"
         >
           Получить расчет стоимости
         </Button>

@@ -30,7 +30,7 @@ const Experience = () => {
   ];
   return (
     <div className="container-base my-20">
-      <h4 className="text-orange font-bold font-montserrat text-[18px] text-center">
+      <h4 className="text-orange font-bold font-montserrat text-18 text-center">
         БЕТОНСИТИСТРОЙ
       </h4>
       <h1 className="text-secondary lg:text-5xl font-bold text-center">
@@ -45,11 +45,11 @@ const Experience = () => {
             >
               <a href="#" className="flex flex-col items-center justify-center">
                 <img
-                  className="h-76 w-76 lg:w-90 lg:h-90 mb-6 object-contain"
+                  className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-6 object-contain"
                   src={ex.img}
                   alt={ex.title}
                 />
-                <h4 className="text-center w-2/3 sm:w-9/12 text-sm leading-3.5 sm:text-[18px] sm:leading-4 font-bold font-space-grotesk text-gray-soft">
+                <h4 className="text-center w-2/3 sm:w-9/12 text-sm leading-3.5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
                   {ex.title}
                 </h4>
               </a>

@@ -36,7 +36,7 @@ const Info = () => {
   ];
   return (
     <div className="container-base">
-      <div className="info flex flex-col gap-2 sm:gap-16">
+      <div className="info flex flex-col gap-2 sm:gap-16 h-auto">
         {informations.map((item, index) => (
           <div
             key={item.id}

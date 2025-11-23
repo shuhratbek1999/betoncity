@@ -169,7 +169,8 @@ const Calculator = () => {
     document.body.appendChild(script);
   }, []);
   return (
-    <div className="container-base p-4">
+    <div className="container-base p-4 my-20 text-18 font-montserrat">
+      <h6 className="font-bold text-orange text-center">КАЛЬКУЛЯТОР</h6>
       <h1 className="text-secondary font-bold font-space-grotesk my-8 lg:text-5xl text-center">
         Узнайте точную стоимость онлайн
       </h1>
@@ -189,7 +190,9 @@ const Calculator = () => {
           />
         </div>
         <div className={`${btn == "6" ? "hidden" : "flex"} flex-col gap-2`}>
-          <h4>Готово: {percent}%</h4>
+          <h4 className="text-base font-space-grotesk text-secondary">
+            Готово: {percent}%
+          </h4>
           <div className="relative w-full h-[7px] bg-gray-200 rounded-full overflow-hidden">
             <div
               className="absolute left-0 top-0 h-full bg-primary"

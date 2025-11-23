@@ -48,7 +48,7 @@ const Carousel = ({ slides = [], interval = 3000 }) => {
         {/* DOTS — pastda */}
         <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
       </div>
-    </div>
+    </div> 
   );
 };
 

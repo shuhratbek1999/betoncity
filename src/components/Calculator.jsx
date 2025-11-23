@@ -318,7 +318,7 @@ const Calculator = () => {
               <span className="text-red-500 text-xs -mt-3">{errname}</span>
             )}
             <PhoneNumberInput
-              className="h-52 lg:w-630 rounded-10"
+              className="h-52 rounded-10"
               value={phone}
               onChange={setPhone}
               setError={setError}

@@ -124,7 +124,6 @@ const Projects = () => {
         modules={[Navigation, Pagination, Autoplay]}
         loop={true}
         autoplay={{ delay: 3000 }}
-        pagination={{ clickable: true }}
         spaceBetween={20}
         navigation={false}
         onInit={(swiper) => {
@@ -142,14 +141,14 @@ const Projects = () => {
       >
         {projects.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="rounded-xl bg-white shadow-sm h-[500px] flex flex-col">
+            <div className="rounded-xl h-[590px] border-[3px] border-orange flex flex-col">
               <img
                 src={item.img}
-                className="w-full h-40 object-cover rounded-xl"
+                className="w-full h-60 object-cover rounded-t-xl"
                 alt=""
               />
 
-              <div className="flex flex-col flex-1 p-4">
+              <div className="flex flex-col flex-1 p-4 bg-white rounded-t-xl h-[calc(580px - 240px)]">
                 <h3 className="text-left text-18 font-space-grotesk text-secondary font-semibold">
                   {item.title}
                 </h3>

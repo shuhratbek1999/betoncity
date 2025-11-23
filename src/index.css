@@ -32,6 +32,8 @@
   --spacing-435: 435px;
   --spacing-550: 550px;
   --spacing-135: 135px;
+  --spacing-188: 188px;
+  --spacing-282: 282px;
   --radius-10: 10px;
 }
 
@@ -92,6 +94,12 @@
   }
   .h-435 {
     height: var(--spacing-435);
+  }
+  .h-188 {
+    height: var(--spacing-188);
+  }
+  .h-282 {
+    height: var(--spacing-282);
   }
   .w-85 {
     width: var(--spacing-85);

@@ -46,19 +46,23 @@ const Advantages = () => {
       <h4 className="text-center text-22 font-montserrat font-normal text-gray-soft my-6">
         Смотрите чем мы отличаемся от других заводов-производителей
       </h4>
-      <div className="advantages-list grid grid-cols-1 sm:grid-cols-3 :*:border-b *:border-secondary">
+      <div className="advantages-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 :*:border-b *:border-secondary">
         {advantages.map((a, i) => (
           <div
             key={a.id}
             className={`
         flex flex-col items-center p-6
 
-        ${i % 3 !== 2 ? "sm:border-r" : ""}  
-        ${i < 3 ? "sm:border-b" : ""}        
-        ${i >= 3 && i < 6 ? "sm:border-b-0" : ""} 
+        ${i % 3 !== 2 ? "lg:border-r" : ""}  
+        ${i < 3 ? "lg:border-b" : ""}        
+        ${i >= 3 && i < 6 ? "lg:border-b-0" : ""} 
       `}
           >
-            <img src={a.img} alt={a.title} className="lg:w-8/12 lg:h-200" />
+            <img
+              src={a.img}
+              alt={a.title}
+              className="lg:w-8/12 lg:h-200 object-contain"
+            />
 
             <h2 className="text-center font-space-grotesk text-2xl text-secondary font-bold w-8/12 my-4">
               {a.title}

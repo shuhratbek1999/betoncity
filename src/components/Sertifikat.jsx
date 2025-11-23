@@ -38,7 +38,7 @@ const Sertifikat = () => {
         <img
           src="https://static.tildacdn.com/tild3665-3330-4430-b136-353462626561/solar_stars-line-duo.png"
           alt=""
-          className="w-16 h-16"
+          className="w-16 h-16 object-contain"
         />
         <h1 className="text-2xl text-secondary font-space-grotesk font-bold">
           Наш товар сертифицирован и соответствует международным стандартам и
@@ -59,7 +59,7 @@ const Sertifikat = () => {
         </p>
         <Button
           onClick={clickModal}
-          className="bg-orange border w-full sm:w-270 border-orange rounded-10 font-bold text-white shadow-[14px_12px_17px_0px_#004c981a]"
+          className="bg-orange border text-nowrap h-52 w-full sm:w-270 border-orange rounded-10 font-bold text-white shadow-[14px_12px_17px_0px_#004c981a]"
         >
           Получить расчет стоимости
         </Button>

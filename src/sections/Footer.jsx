@@ -52,7 +52,7 @@ const Footer = () => {
           <img
             src="https://static.tildacdn.com/tild3333-6430-4566-a236-636635313337/653b19cd-c554-46ff-9.png"
             alt="images"
-            className="w-8/12 sm:w-2/12 my-2"
+            className="w-8/12 sm:w-2/12 my-2 object-contain"
           />
           <div className="contact flex items-center gap-4">
             <h1 className="text-white text-18 font-space-grotesk font-bold">
@@ -61,12 +61,12 @@ const Footer = () => {
             <img
               src="https://static.tildacdn.com/tild3965-3131-4139-b564-396666663032/logos_whatsapp-icon.png"
               alt="whatsapp img"
-              className="w-10 h-10"
+              className="w-10 h-10 object-contain"
             />
             <img
               src="https://static.tildacdn.com/tild3063-6130-4630-a138-383230643434/Link__tgsvg.svg"
               alt="telegram img"
-              className="w-10 h-10"
+              className="w-10 h-10 object-contain"
             />
           </div>
         </div>

@@ -333,7 +333,7 @@ const Prices = () => {
       <h1 className="lg:text-5xl font-bold font-space-grotesk text-center">
         Цены на бетон в Москве и МО
       </h1>
-      <div className="buttons flex items-center gap-4 my-6 max-sm:overflow-x-scroll">
+      <div className="buttons flex items-center gap-4 my-6 max-xl:overflow-x-scroll">
         {services.map((s) => (
           <Button
             key={s.id}

@@ -52,7 +52,11 @@ const Equipment = () => {
             className="flex flex-col sm:flex-row justify-center gap-4 border-b-2 border-b-orange pb-4"
           >
             <div className="eq_img w-full flex justify-center sm:justify-start sm:w-1/2">
-              <img className="w-9/12 sm:w-full" src={ex.img} alt={ex.name} />
+              <img
+                className="w-9/12 sm:w-full object-contain"
+                src={ex.img}
+                alt={ex.name}
+              />
             </div>
             <div className="info w-full sm:w-1/2">
               <h2 className="text-18 font-bold font-space-grotesk text-secondary">

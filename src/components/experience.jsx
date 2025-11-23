@@ -45,7 +45,7 @@ const Experience = () => {
             >
               <a href="#" className="flex flex-col items-center justify-center">
                 <img
-                  className="h-76 w-76 lg:w-90 lg:h-90 mb-6"
+                  className="h-76 w-76 lg:w-90 lg:h-90 mb-6 object-contain"
                   src={ex.img}
                   alt={ex.title}
                 />

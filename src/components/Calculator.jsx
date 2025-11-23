@@ -185,6 +185,7 @@ const Calculator = () => {
           <img
             src="https://static.tildacdn.com/tild3736-3636-4338-b630-616138376662/solar_stars-line-duo.svg"
             alt="section img"
+            className="object-contain"
           />
         </div>
         <div className={`${btn == "6" ? "hidden" : "flex"} flex-col gap-2`}>

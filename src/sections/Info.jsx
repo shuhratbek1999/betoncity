@@ -45,18 +45,22 @@ const Info = () => {
             } flex gap-8 flex-col sm:flex-row`}
           >
             <div className="w-full sm:w-1/2">
-              <h1 className="font-space-grotesk leading-10 sm:leading-16 font-bold text-32 lg:text-5xl text-secondary">
+              <h1 className="font-space-grotesk leading-10 xl:leading-16 font-bold text-32 lg:text-5xl text-secondary">
                 {item.title}
               </h1>
-              <p className="font-normal text-xl leading-5 sm:leading-7 font-space-grotesk text-secondary my-4">
+              <p className="font-normal text-xl leading-5 xl:leading-7 font-space-grotesk text-secondary my-4">
                 {item.text}
               </p>
-              <p className="font-normal text-xl leading-5 sm:leading-7 font-space-grotesk text-secondary my-4">
+              <p className="font-normal text-xl leading-5 xl:leading-7 font-space-grotesk text-secondary my-4">
                 {item.info}
               </p>
             </div>
             <div className="images w-full sm:w-1/2">
-              <img src={item.img} alt={item.title} className="rounded-10" />
+              <img
+                src={item.img}
+                alt={item.title}
+                className="rounded-10 object-contain"
+              />
             </div>
           </div>
         ))}

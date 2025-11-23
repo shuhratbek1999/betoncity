@@ -44,14 +44,14 @@ const Plant = () => {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="container-base relative top-32 mb-60 sm:mb-40">
-      <h1 className="xl:text-5xl lg:text-32 text-center sm:text-left font-bold font-space-grotesk text-secondary mt-48 sm:mt-0">
+    <div className="container-base relative top-60 mb-60 lg:mb-40">
+      <h1 className="xl:text-5xl text-32  text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
         Проведем экскурсию по заводу
       </h1>
-      <h4 className="font-space-grotesk text-center sm:text-left font-normal lg:text-2xl text-gray-soft my-4">
+      <h4 className="font-space-grotesk  text-center sm:text-left font-normal lg:text-2xl text-gray-soft my-4">
         а так же ответим на все вопросы которые могли <br /> у вас возникнуть
       </h4>
-      <div className="buttons flex flex-col sm:flex-row gap-4 my-4">
+      <div className="buttons ml-1 flex flex-col mx-auto md:flex-row gap-4 my-4 lg::ml-0">
         <div className="phone">
           <PhoneNumberInput
             className="h-52 lg:w-270 rounded-10"
@@ -69,7 +69,7 @@ const Plant = () => {
           Записаться на экскурсию
         </Button>
       </div>
-      <div className="checked">
+      <div className="checked ml-1 ">
         <label className="inline-flex items-center gap-3 cursor-pointer">
           <FancyCheckbox
             checked={someState}
@@ -84,7 +84,7 @@ const Plant = () => {
         )}
       </div>
       <img
-        className="absolute right-12 -top-60 sm:-top-12 w-10/12 sm:w-1/3 object-contain"
+        className="absolute right-28 -top-56 lg:-top-12 w-8/12 lg:w-1/3 object-contain"
         src="https://static.tildacdn.com/tild6430-6233-4662-a133-383530376361/Layer_1_5.png"
         alt="images"
       />

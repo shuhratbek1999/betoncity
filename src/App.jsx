@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Calculator from "./components/Calculator";
@@ -16,9 +16,17 @@ import CalculationBiton from "./components/CalculationBiton";
 import Accordion from "./components/Accordion";
 import Footer from "./sections/Footer";
 import Adress from "./sections/Adress";
+import Modal from "./components/Modal";
+import Button from "./components/Button";
+import PhoneNumberInput from "./components/Phone";
+import FancyCheckbox from "./components/checkbox";
 function App() {
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(false);
   const [cookie, setCookie] = useState(true);
+  const [someState, setSomeState] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
   const faqData = [
     {
       id: 1,
@@ -67,6 +75,13 @@ function App() {
       className="w-full h-48 sm:h-550 object-cover rounded-xl"
     />,
   ];
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 3000); // 3 sekund
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <Header />
@@ -114,11 +129,11 @@ function App() {
         <Adress />
       </main>
       <Footer />
-      <div className="fixed bottom-0 right-0 sm:right-4">
+      <div className="fixed bottom-2 right-0 sm:right-4">
         <div
           className={`${
             cookie ? "flex" : "hidden"
-          } info w-full sm:w-550 h-52 bg-[#ebebeb] items-center justify-around rounded-md p-2`}
+          } info w-11/12 sm:w-550 h-52 bg-[#ebebeb] items-center justify-around rounded-md p-2`}
         >
           <h4 className="font-montserrat text-center sm:text-left text-[15px] text-secondary font-light">
             Пользуясь сайтом, вы принимаете политику cookie
@@ -166,6 +181,94 @@ function App() {
           </svg>
         </div>
       </div>
+      <Modal
+        open={show}
+        onClose={() => setShow(false)}
+        width="1000px"
+        height="100vh"
+      >
+        <div className="content flex justify-between w-full h-full relative">
+          <div className="img w-1/2 h-full sm:flex hidden">
+            <img
+              src="https://static.tildacdn.com/tild3331-3361-4238-b539-356161663334/Airbrush-OBJECT-REMO.jpg"
+              alt="modal img"
+              className="object-cover w-full"
+            />
+          </div>
+          <div className="form w-full sm:w-1/2 px-4">
+            <img
+              className="w-1/2"
+              src="https://static.tildacdn.com/tild6666-6136-4632-b664-386636376664/image_10png.webp"
+              alt="logo img"
+            />
+            <h1 className="font-bold xl:text-3xl font-montserrat my-3">
+              Сложный выбор?
+            </h1>
+            <div className="my-2 text-xl font-normal font-montserrat">
+              Мы поможем! <br />
+              Для вас <strong>ПРОМОКОД</strong>
+            </div>
+            <Button className="w-full h-76 bg-gray-200 text-orange font-semibold text-xl sm:text-3xl rounded-10">
+              БеТОНСИТИСТРОЙ2025
+            </Button>
+            <div className="flex items-center justify-between w-full my-4">
+              <p className="text-sm sm:text-xl font-normal font-montserrat">
+                назовите его оператору и зафиксируйте скидку
+              </p>
+              <h1 className="text-5xl text-orange font-bold font-montserrat">
+                10%
+              </h1>
+            </div>
+            <div className="form-phone flex flex-col">
+              <PhoneNumberInput
+                className="h-76 w-full rounded-10"
+                value={phone}
+                onChange={setPhone}
+                setError={setError}
+              />
+              {error && <span className="text-red-500 text-xs">{error}</span>}
+              <label className="inline-flex items-center gap-3 my-2 cursor-pointer">
+                <FancyCheckbox
+                  checked={someState}
+                  onChange={(v) => setSomeState(v)}
+                />
+                <span className="inline-block text-xs font-space-grotesk text-check">
+                  Даю согласие на обработку своих персональных данных
+                </span>
+              </label>
+            </div>
+            <Button className="h-76 w-full lg:w-270 my-4 bg-orange text-white px-[15px] rounded-10 font-space-grotesk text-base">
+              Заказать
+            </Button>
+            <div className="footer">
+              <p>
+                Для оптовых покупателей у нас <br /> есть особое предложение
+              </p>
+              {/* <img src="" alt="" /> */}
+            </div>
+          </div>
+          <div
+            onClick={() => setShow(false)}
+            className="svg absolute top-0 right-2 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ef9c1c"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              onClick={() => setOpen(false)}
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </div>
+        </div>
+      </Modal>
     </>
   );
 }

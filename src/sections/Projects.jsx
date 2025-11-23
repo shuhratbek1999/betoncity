@@ -78,41 +78,8 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container-base my-20 relative" id="Проекты">
+    <div className="container-base my-20" id="Проекты">
       {/* Custom Prev Button */}
-      <button
-        ref={prevRef}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24">
-          <path
-            d="M15 4L7 12L15 20"
-            stroke="#000"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-
-      {/* Custom Next Button */}
-      <button
-        ref={nextRef}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24">
-          <path
-            d="M9 4L17 12L9 20"
-            stroke="#000"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-
       <h1 className="text-32 lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Наши проекты
       </h1>
@@ -138,17 +105,14 @@ const Projects = () => {
           1024: { slidesPerView: 3 },
           1400: { slidesPerView: 4 },
         }}
+        className="relative"
       >
         {projects.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="rounded-xl h-[590px] border-[3px] border-orange flex flex-col">
-              <img
-                src={item.img}
-                className="w-full h-60 object-cover rounded-t-xl"
-                alt=""
-              />
+            <div className="rounded-xl h-[590px] border-[3px] border-orange flex flex-col overflow-hidden">
+              <img src={item.img} className="w-full h-60 object-cover" alt="" />
 
-              <div className="flex flex-col flex-1 p-4 bg-white rounded-t-xl h-[calc(580px - 240px)]">
+              <div className="flex rounded-t-10 flex-col flex-1 p-4 bg-white h-[calc(580px - 240px)]">
                 <h3 className="text-left text-18 font-space-grotesk text-secondary font-semibold">
                   {item.title}
                 </h3>
@@ -181,6 +145,38 @@ const Projects = () => {
             </div>
           </SwiperSlide>
         ))}
+        <button
+          ref={prevRef}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24">
+            <path
+              d="M15 4L7 12L15 20"
+              stroke="#000"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
+        {/* Custom Next Button */}
+        <button
+          ref={nextRef}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24">
+            <path
+              d="M9 4L17 12L9 20"
+              stroke="#000"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </Swiper>
     </div>
   );

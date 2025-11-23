@@ -1,6 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Modal({ open, onClose, children }) {
+export default function Modal({
+  open,
+  onClose,
+  children,
+  width = "auto",
+  height = "auto",
+  maxWidth = "90%",
+  maxHeight = "90%",
+  className = "",
+}) {
   return (
     <AnimatePresence>
       {open && (
@@ -16,7 +25,13 @@ export default function Modal({ open, onClose, children }) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md"
+            style={{
+              width,
+              height,
+              maxWidth,
+              maxHeight,
+            }}
+            className={`bg-white rounded-2xl shadow-xl p-6 ${className}`}
             onClick={(e) => e.stopPropagation()}
           >
             {children}

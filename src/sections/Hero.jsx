@@ -58,7 +58,7 @@ export default function Hero() {
       style={{ backgroundImage: `url(${HeroBgImg})` }}
     >
       <div className="container-base">
-        <h1 className="text-secondary w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold my-12 text-center lg:text-left">
+        <h1 className="text-secondary leading-8 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold my-3 text-center lg:text-left">
           ПРОИЗВОДСТВО <br /> И ДОСТАВКА БЕТОНА <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
@@ -107,7 +107,7 @@ export default function Hero() {
             )}
           </div>
         </div>
-        <div className="relative lg:w-135 lg:h-135 max-sm:w-85 max-sm:h-85 flex items-center justify-center left-[43%] -bottom-60 sm:bottom-2">
+        <div className="relative md:w-135 md:h-135 md:-bottom-full max-md:-bottom-5/12 max-md:w-85 max-md:h-85 flex items-center justify-center left-[43%]">
           <div className="absolute inset-0 bg-black/50 rounded-full"></div>
           <div className="absolute w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
             <div className="absolute inset-0 bg-gray-100/30 rounded-full"></div>

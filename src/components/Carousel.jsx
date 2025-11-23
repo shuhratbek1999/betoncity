@@ -8,17 +8,16 @@ import "swiper/css/pagination";
 
 const Carousel = ({ slides = [], interval = 3000 }) => {
   return (
-    <div className="container-base flex justify-center">
-      <div className="relative w-[95%] mt-96 sm:mt-2">
-        {/* LEFT BUTTON — rasm tashqarisida */}
-        <button className="custom-prev absolute -left-12 top-1/2 -translate-y-1/2 bg-gray-200 p-3 rounded-full shadow">
+    <div className="container-base w-full flex justify-center relative">
+      <div className="w-[90%] mt-12 sm:mt-2 relative">
+        {/* PREV / NEXT — tashqarida */}
+        <button className="custom-prev absolute -left-16 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow z-50">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
             <path d="M15 5l-7 7 7 7" stroke="black" strokeWidth="2" />
           </svg>
         </button>
 
-        {/* RIGHT BUTTON — rasm tashqarisida */}
-        <button className="custom-next absolute -right-12 top-1/2 -translate-y-1/2 bg-gray-200 p-3 rounded-full shadow">
+        <button className="custom-next absolute -right-16 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow z-50">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
             <path d="M9 5l7 7-7 7" stroke="black" strokeWidth="2" />
           </svg>
@@ -45,10 +44,10 @@ const Carousel = ({ slides = [], interval = 3000 }) => {
           ))}
         </Swiper>
 
-        {/* DOTS — pastda */}
+        {/* DOTS */}
         <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
       </div>
-    </div> 
+    </div>
   );
 };
 

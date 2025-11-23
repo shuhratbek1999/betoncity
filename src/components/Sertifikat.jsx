@@ -30,7 +30,7 @@ const Sertifikat = () => {
     setOpen(true);
   };
   return (
-    <div className="container-base flex flex-col sm:flex-row my-10">
+    <div className="container-base flex flex-col sm:flex-row">
       <div className="video w-full sm:w-1/2">
         <video src="blob:https://rutube.ru/be62cbcd-6144-49d5-8cc8-fc50cc69416a"></video>
       </div>

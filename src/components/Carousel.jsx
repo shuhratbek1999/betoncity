@@ -116,7 +116,7 @@ const Carousel = ({ slides = [], interval = 3000 }) => {
           ))}
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 

@@ -69,11 +69,11 @@ const LaboratoryTesting = () => {
                 className="rounded-10 h-full w-[98%] absolute left-4 -top-3 sm:left-8 sm:-top-6"
               />
             </div>
-            <div className="content-info w-full sm:w-6/12">
+            <div className="content-info w-full sm:w-6/12 relative">
               <img
                 src={t.info_img}
                 alt={t.title}
-                className="block absolute right-5/12 top-1/3 sm:-top-5 md:right-[38%] xl:right-138 object-contain"
+                className="block absolute left-5/12 sm:left-0 -top-20  sm:-top-5 md:right-[38%] xl:right-138 object-contain"
               />
               <h2 className="font-bold text-center sm:text-left font-space-grotesk text-32 text-secondary mt-0 md:mt-14 lg:mt-24 mb-4">
                 {t.title}

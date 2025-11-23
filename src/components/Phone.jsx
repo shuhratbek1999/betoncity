@@ -20,7 +20,7 @@ export default function PhoneNumberInput({
   return (
     <div className={`bg-phone flex items-center px-4 rounded-10 ${className}`}>
       <PhoneInput
-        defaultCountry="uz"
+        defaultCountry="ru"
         value={value}
         onChange={validate}
         className="w-full"

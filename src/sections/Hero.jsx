@@ -51,7 +51,7 @@ export default function Hero() {
       style={{ backgroundImage: `url(${HeroBgImg})` }}
     >
       <div className="container-base">
-        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-14 text-center lg:text-left">
+        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-4 lg:mt-14 text-center lg:text-left">
           ПРОИЗВОДСТВО <br /> И ДОСТАВКА БЕТОНА <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
@@ -65,7 +65,7 @@ export default function Hero() {
           </strong>
         </div>
         <div className="form">
-          <div className="flex flex-col sm:flex-row gap-5 my-4">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 my-4">
             <div className="phone">
               <PhoneNumberInput
                 className="h-76 lg:w-270 rounded-10"
@@ -75,7 +75,7 @@ export default function Hero() {
                 setError={setError}
               />
               {error && (
-                <span className="text-red-500 text-xs -mt-3">{error}</span>
+                <span className="text-red-500 text-xs -mt-5">{error}</span>
               )}
             </div>
             <Button

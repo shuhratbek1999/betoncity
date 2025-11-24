@@ -129,7 +129,7 @@ function App() {
         <Adress />
       </main>
       <Footer />
-      <div className="fixed bottom-2 right-0 sm:right-4">
+      <div className="fixed bottom-2 right-0 sm:right-4 z-50">
         <div
           className={`${
             cookie ? "flex" : "hidden"

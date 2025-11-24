@@ -101,8 +101,12 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="hidden sm:flex ml-10 gl:ml-2">
-            <img className="h-10" src={LogoImg} alt="Logo" />
+          <a href="#" className="hidden xs:flex ml-10 gl:ml-2">
+            <img
+              className="h-10 w-full object-contain"
+              src={LogoImg}
+              alt="Logo"
+            />
           </a>
 
           {/* Navigation */}
@@ -351,7 +355,7 @@ export default function Header() {
           </div>
           {/* SUB MODAL */}
           <div
-            className={`fixed top-0 right-0 w-full bg-gray-50 h-screen z-[60] transform transition-transform duration-300
+            className={`fixed top-0 right-0 w-full bg-gray-50 h-screen z-60 transform transition-transform duration-300
     ${subModalOpen ? "translate-x-0" : "translate-x-full"}`}
           >
             {/* TOP BAR */}

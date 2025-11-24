@@ -36,27 +36,27 @@ const Info = () => {
   ];
   return (
     <div className="container-base">
-      <div className="info flex flex-col gap-2 sm:gap-16 h-auto">
+      <div className="info flex flex-col sm:items-center gap-2 sm:gap-16 h-auto">
         {informations.map((item, index) => (
           <div
             key={item.id}
             className={`${
-              index % 2 != 0 ? "lg:flex-row-reverse" : ""
-            } flex gap-8 flex-col lg:flex-row lg:justify-between`}
+              index % 2 != 0 ? "xl:flex-row-reverse" : " "
+            } flex w-full sm:w-10/12 lg:w-full gap-8 flex-col-reverse xl:flex-row xl:justify-between`}
           >
-            <div className="w-full lg:w-[48%] -mt-4">
+            <div className="w-full xl:w-[48%] lg:-mt-4">
               <h1 className="font-space-grotesk leading-10 xl:leading-16 font-bold text-32 lg:text-5xl text-secondary">
                 {item.title}
               </h1>
-              <p className="font-normal text-xl leading-5 xl:leading-7 font-space-grotesk text-secondary my-4">
+              <p className="font-normal text-xl leading-6 xl:leading-7 font-space-grotesk text-secondary my-4">
                 {item.text}
               </p>
-              <p className="font-normal text-xl leading-5 xl:leading-7 font-space-grotesk text-secondary my-4">
+              <p className="font-normal text-xl leading-6 xl:leading-7 font-space-grotesk text-secondary my-4">
                 {item.info}
               </p>
             </div>
             <div
-              className={`images h-80 lg:h-[400px] w-full lg:w-[48%] border-[3px] border-orange rounded-10 relative`}
+              className={`images h-80 xl:h-[400px] w-full xl:w-[48%] border-[3px] border-orange rounded-10 relative`}
             >
               <img
                 src={item.img}

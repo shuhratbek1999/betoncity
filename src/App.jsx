@@ -104,17 +104,18 @@ function App() {
         <Projects />
         <LaboratoryTesting />
         <Plant />
-        <Equipment />
+        <div className="bg-[radial-gradient(#cfcfcf_1px,transparent_1px)] bg-size-[40px_40px] pt-6 lg:pt-32 pb-8 bg-gray-100">
+          <Equipment />
+        </div>
         <Carousel slides={images} interval={3000} />
         <Sertifikat />
-        <div
-          className="img h-60 sm:h-435 w-full"
-          style={{
-            backgroundImage: `url('https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></div>
+        <div className="img lg:h-435 w-full lg:mb-20 overflow-x-hidden">
+          <img
+            src="https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg"
+            className="w-full object-contain"
+            alt=""
+          />
+        </div>
         <Info />
         <CalculationBiton />
         <div className="container-base my-10">
@@ -184,24 +185,23 @@ function App() {
       <Modal
         open={show}
         onClose={() => setShow(false)}
-        width="1000px"
-        height="100vh"
+        className="xl:w-[1000px] xl:h-screen"
       >
         <div className="content flex justify-between w-full h-full relative">
-          <div className="img w-1/2 h-full sm:flex hidden">
+          <div className="img w-1/2 h-full lg:flex hidden">
             <img
               src="https://static.tildacdn.com/tild3331-3361-4238-b539-356161663334/Airbrush-OBJECT-REMO.jpg"
               alt="modal img"
               className="object-cover w-full"
             />
           </div>
-          <div className="form w-full sm:w-1/2 px-4">
+          <div className="form w-full lg:w-1/2 px-4">
             <img
               className="w-1/2"
               src="https://static.tildacdn.com/tild6666-6136-4632-b664-386636376664/image_10png.webp"
               alt="logo img"
             />
-            <h1 className="font-bold xl:text-3xl font-montserrat my-3">
+            <h1 className="font-bold text-3xl font-montserrat my-3">
               Сложный выбор?
             </h1>
             <div className="my-2 text-xl font-normal font-montserrat">
@@ -209,11 +209,11 @@ function App() {
               Для вас <strong>ПРОМОКОД</strong>
             </div>
             <Button className="w-full h-76 bg-gray-200 text-orange font-semibold text-xl sm:text-3xl rounded-10">
-              БеТОНСИТИСТРОЙ2025
+              БEТОНСИТИСТРОЙ2025
             </Button>
             <div className="flex items-center justify-between w-full my-4">
               <p className="text-sm sm:text-xl font-normal font-montserrat">
-                назовите его оператору и зафиксируйте скидку
+                назовите его оператору <br /> и зафиксируйте скидку
               </p>
               <h1 className="text-5xl text-orange font-bold font-montserrat">
                 10%
@@ -237,7 +237,7 @@ function App() {
                 </span>
               </label>
             </div>
-            <Button className="h-76 w-full lg:w-270 my-4 bg-orange text-white px-[15px] rounded-10 font-space-grotesk text-base">
+            <Button className="h-76 w-270 my-4 bg-orange text-white px-[15px] rounded-10 font-space-grotesk text-base">
               Заказать
             </Button>
             <div className="footer">

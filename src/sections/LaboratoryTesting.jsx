@@ -52,33 +52,33 @@ const LaboratoryTesting = () => {
       <h1 className="text-3xl lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Лабораторные испытания продукции
       </h1>
-      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-24 mt-4">
+      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-10 mt-4">
         Наука за каждым кубическим метром - исследования и бетон высочайшего
         качества
       </h4>
-      <div className="content flex flex-col gap-12 sm:gap-16">
+      <div className="content flex flex-col md:items-center gap-12 sm:gap-16">
         {testing.map((t) => (
           <div
             key={t.id}
-            className="content_item flex flex-col sm:flex-row justify-between gap-2 sm:gap-20 relative"
+            className="content_item w-full md:w-10/12 lg:w-full flex flex-col lg:flex-row justify-between gap-2 lg:gap-20 relative"
           >
-            <div className="content-img sm:h-282 sm:w-6/12 max-sm:h-188  border-[3px] flex justify-center rounded-10 border-orange relative">
+            <div className="content-img w-full lg:h-282 lg:w-6/12 max-sm:h-188 max-lg:h-282 border-[3px] flex justify-center rounded-10 border-orange relative">
               <img
                 src={t.img}
                 alt={t.title}
                 className="rounded-10 h-full w-[98%] absolute left-4 -top-3 sm:left-8 sm:-top-6"
               />
             </div>
-            <div className="content-info w-full sm:w-6/12 relative">
+            <div className="content-info flex flex-col items-center lg:items-start w-full lg:w-6/12 relative">
               <img
                 src={t.info_img}
                 alt={t.title}
-                className="block absolute left-5/12 sm:left-0 -top-20  sm:-top-5 md:right-[38%] xl:right-138 object-contain"
+                className="block absolute left-5/12 lg:left-0 -top-20 md:-top-14 sm:-top-5 lg:-top-5 md:right-[38%] xl:right-138 object-contain"
               />
-              <h2 className="font-bold text-center sm:text-left font-space-grotesk text-32 text-secondary mt-0 md:mt-14 lg:mt-24 mb-4">
+              <h2 className="font-bold text-center sm:text-left font-space-grotesk text-32 text-secondary lg:mb-6 mt-6 lg:mt-20">
                 {t.title}
               </h2>
-              <p className="w-full text-center sm:text-left sm:w-8/12 text-secondary font-space-grotesk lg:text-18">
+              <p className="w-full text-center leading-5 lg:leading-6 lg:text-left sm:w-8/12 text-secondary font-space-grotesk text-18">
                 {t.desc}
               </p>
             </div>
@@ -86,11 +86,11 @@ const LaboratoryTesting = () => {
         ))}
       </div>
       <nav className="my-12 w-full flex justify-center">
-        <ul className="flex items-center w-full sm:w-10/12 justify-between gap-x-2 gap-y-6 sm:gap-0 sm:justify-between flex-wrap">
+        <ul className="flex items-center w-full sm:w-full justify-between gap-x-2 gap-y-6 sm:gap-0 sm:justify-between flex-wrap">
           {experiences.map((ex) => (
             <li
               key={ex.id}
-              className="flex items-center justify-center w-[45%]
+              className="flex items-center justify-center w-[48%]
                sm:w-1/4"
             >
               <a href="#" className="flex flex-col items-center justify-center">
@@ -99,7 +99,7 @@ const LaboratoryTesting = () => {
                   src={ex.img}
                   alt={ex.title}
                 />
-                <h4 className="text-center w-full sm:w-9/12 text-sm leading-3.5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
+                <h4 className="text-center w-full sm:w-9/12 text-sm leading-5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
                   {ex.title}
                 </h4>
               </a>

@@ -177,7 +177,13 @@ const Calculator = () => {
       <h1 className="text-secondary font-bold font-space-grotesk my-8 lg:text-5xl text-center">
         Узнайте точную стоимость онлайн
       </h1>
-      <div className="calculator_section relative w-full min-h-298 rounded-xl bg-white border-transparent shadow-[14px_12px_17px_12px_#004c981a] p-4">
+      <div
+        className={`${
+          btn == "6"
+            ? ""
+            : "rounded-xl bg-white border-transparent shadow-[14px_12px_17px_12px_#004c981a]"
+        } calculator_section relative w-full min-h-298 p-4`}
+      >
         <div
           className={`${
             btn == "6" ? "hidden" : "flex"
@@ -208,14 +214,14 @@ const Calculator = () => {
           </div>
         </div>
         <div
-          className={`buttons flex flex-col sm:flex-row flex-wrap items-center gap-4 my-5 ${
+          className={`buttons flex flex-wrap items-center gap-4 my-5 ${
             btn == "1" ? "flex" : "hidden"
           }`}
         >
           {products.map((btn) => (
             <Button
               key={btn.id}
-              className="bg-white border max-sm:w-full border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
+              className="bg-white whitespace-nowrap border max-sm:w-full border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
               onClick={() => increase(btn.id)}
             >
               <span className="w-2.5 h-2.5 rounded-full border-2 border-check inline-block"></span>
@@ -224,14 +230,14 @@ const Calculator = () => {
           ))}
         </div>
         <div
-          className={`buttons flex-col sm:flex-row items-center gap-4 my-5 ${
+          className={`buttons flex-col flex-wrap sm:flex-row items-center gap-4 my-5 ${
             btn == "2" ? "flex" : "hidden"
           }`}
         >
           {productItems.map((btn) => (
             <Button
               key={btn.id}
-              className="bg-white max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
+              className="bg-white  whitespace-nowrap max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
               onClick={() => clickProductItem(btn.id)}
             >
               <span className="w-2.5 h-2.5 rounded-full border-2 border-check inline-block"></span>
@@ -240,14 +246,14 @@ const Calculator = () => {
           ))}
         </div>
         <div
-          className={`buttons flex-col sm:flex-row items-center gap-4 my-5 ${
+          className={`buttons flex-col flex-wrap sm:flex-row items-center gap-4 my-5 ${
             btn == "3" ? "flex" : "hidden"
           }`}
         >
           {deadlines.map((btn) => (
             <Button
               key={`product-${btn.id}`}
-              className="bg-white max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
+              className="bg-white whitespace-nowrap max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
               onClick={() => clickDedline(btn.id)}
             >
               <span className="w-2.5 h-2.5 rounded-full border-2 border-check inline-block"></span>
@@ -256,14 +262,14 @@ const Calculator = () => {
           ))}
         </div>
         <div
-          className={`buttons flex-col sm:flex-row items-center gap-4 my-5 ${
+          className={`buttons flex-col flex-wrap sm:flex-row items-center gap-4 my-5 ${
             btn == "4" ? "flex" : "hidden"
           }`}
         >
           {services.map((btn) => (
             <Button
               key={`product-${btn.id}`}
-              className="bg-white max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
+              className="bg-white whitespace-nowrap max-sm:w-full border border-check py-4 font-space-grotesk text-base font-normal flex gap-2 items-center rounded-xl"
               onClick={() => clickServices(btn.id)}
             >
               <span className="w-2.5 h-2.5 rounded-full border-2 border-check inline-block"></span>
@@ -272,7 +278,7 @@ const Calculator = () => {
           ))}
         </div>
         <div
-          className={`buttons flex-col sm:flex-row items-center gap-4 my-5 ${
+          className={`buttons flex-col flex-wrap sm:flex-row items-center gap-4 my-5 ${
             btn == "5" ? "flex" : "hidden"
           }`}
         >
@@ -318,7 +324,7 @@ const Calculator = () => {
               value={firstName}
               type="text"
               placeholder="Ваше имя"
-              className="h-52 bg-phone border-none focus:outline-none indent-3 text-black font-normal text-base rounded-10 lg:w-full"
+              className="h-52 bg-phone font-arial border-none focus:outline-none indent-3 text-gray-soft font-normal text-base rounded-10 lg:w-full"
             />
             {errname && (
               <span className="text-red-500 text-xs -mt-3">{errname}</span>
@@ -348,7 +354,7 @@ const Calculator = () => {
                 e.preventDefault();
                 clickModal();
               }}
-              className="w-full h-52 lg:text-base hover:bg-white hover:text-orange rounded-10 bg-orange text-white font-semibold border border-orange border-solid"
+              className="w-full h-52 text-base hover:bg-white hover:text-orange rounded-10 bg-orange text-white font-semibold border border-orange border-solid"
             >
               РАССЧИТАТЬ СТОИМОСТЬ
             </button>
@@ -359,7 +365,7 @@ const Calculator = () => {
             btn == "6" ? "hidden" : "flex"
           }`}
         >
-          <div className="footer-text w-full sm:w-6/12 text-orange font-bold text-[18px] font-montserrat leading-5">
+          <div className="footer-text w-full sm:w-6/12 text-orange font-bold text-18 font-montserrat leading-5">
             Укажите необходимую марку и объем - получите <br /> лучшее
             предложение на рынке!
           </div>

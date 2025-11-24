@@ -139,7 +139,7 @@ export default function Address() {
   };
 
   return (
-    <div className="relative w-full h-[720px]">
+    <div className="relative w-full h-[720px]" id="Контакты">
       <h1 className="text-32 lg:text-5xl text-[#272727] font-space-grotesk text-center my-10 font-bold">
         Адреса заводов
       </h1>

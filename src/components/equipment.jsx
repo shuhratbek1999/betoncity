@@ -25,12 +25,12 @@ const Equipment = () => {
     },
   ];
   return (
-    <div className="container-base mb-12 lg:h-[600px] flex flex-col lg:flex-row justify-center">
-      <div className="info w-full lg:w-6/12">
-        <h1 className="font-space-grotesk text-center sm:text-left font-bold text-32 lg:text-5xl text-secondary">
+    <div className="container-base mb-12 lg:h-[600px] flex flex-col md:items-center lg:items-start lg:flex-row justify-center">
+      <div className="info w-full md:w-10/12 lg:w-6/12">
+        <h1 className="font-space-grotesk leading-8 lg:leading-14 text-center sm:text-left font-bold text-32 lg:text-5xl text-secondary">
           У нас есть вся необходимая техника
         </h1>
-        <h4 className="font-space-grotesk text-center sm:text-left text-2xl font-normal text-secondary my-2 sm:my-10">
+        <h4 className="font-space-grotesk leading-8 text-center sm:text-left text-2xl font-normal text-secondary my-2 sm:my-10">
           Вам не нужно беспокоиться и дополнительно <br /> обращаться в другие
           компании.
         </h4>
@@ -45,7 +45,7 @@ const Equipment = () => {
           </span>
         </div>
       </div>
-      <div className="equipments w-full lg:w-5/12 flex flex-col items-start gap-4">
+      <div className="equipments w-full md:w-10/12 lg:w-5/12 flex flex-col items-start gap-4">
         {equipments.map((ex) => (
           <div
             key={ex.id}

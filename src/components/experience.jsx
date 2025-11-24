@@ -36,23 +36,33 @@ const Experience = () => {
       <h1 className="text-secondary lg:text-5xl font-bold text-center">
         Надежный партнер с большим опытом
       </h1>
+
       <nav className="my-12">
-        <ul className="flex items-center justify-center sm:justify-between gap-6 sm:gap-0 flex-wrap">
-          {experiences.map((ex) => (
+        <ul
+          className="
+      grid 
+      grid-cols-2            /* mobile: 2 ustun */
+      gap-y-10 gap-x-4       
+      sm:grid-cols-3         /* tablet: 3 ustun */
+      lg:grid-cols-5         /* desktop: 5 ustun */
+      place-items-center
+    "
+        >
+          {experiences.map((ex, i) => (
             <li
               key={ex.id}
-              className="flex items-center justify-center sm:w-1/5"
+              className={`${
+                i === 2 ? "col-span-2 sm:col-span-1" : ""
+              } flex flex-col items-center`}
             >
-              <a href="#" className="flex flex-col items-center justify-center">
-                <img
-                  className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-6 object-contain"
-                  src={ex.img}
-                  alt={ex.title}
-                />
-                <h4 className="text-center w-2/3 sm:w-9/12 text-sm leading-3.5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
-                  {ex.title}
-                </h4>
-              </a>
+              <img
+                className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-6 object-contain"
+                src={ex.img}
+                alt={ex.title}
+              />
+              <h4 className="text-center max-sm:w-10/12 text-sm leading-5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
+                {ex.title}
+              </h4>
             </li>
           ))}
         </ul>

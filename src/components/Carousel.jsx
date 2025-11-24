@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 const Carousel = ({ slides = [], interval = 3000 }) => {
   return (
-    <div className="container-base w-full flex justify-center relative">
+    <div className="container-base w-full sm:w-10/12 lg:w-full flex justify-center relative">
       <div className="w-full mt-12 sm:mt-2 relative">
         {/* PREV / NEXT — tashqarida */}
         <button className="custom-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow z-30">

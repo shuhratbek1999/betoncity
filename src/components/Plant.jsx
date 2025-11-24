@@ -44,12 +44,12 @@ const Plant = () => {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="container-base my-32 flex flex-col-reverse items-center lg:flex-row jlg:ustify-between">
+    <div className="container-base my-32 flex flex-col-reverse items-center lg:flex-row lg:justify-between">
       <div className="content">
-        <h1 className="xl:text-5xl text-32  text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
+        <h1 className="xl:text-5xl text-32 mt-4 max-sm:leading-8 text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
           Проведем экскурсию по заводу
         </h1>
-        <h4 className="font-space-grotesk  text-center sm:text-left font-normal lg:text-2xl text-gray-soft my-4">
+        <h4 className="font-space-grotesk  text-center sm:text-left font-normal text-2xl text-gray-soft my-4">
           а так же ответим на все вопросы которые могли <br /> у вас возникнуть
         </h4>
         <div className="buttons w-full ml-1 flex flex-col mx-auto lg:flex-row gap-4 my-4 lg::ml-0">

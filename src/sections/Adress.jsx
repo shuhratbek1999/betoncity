@@ -140,6 +140,9 @@ export default function Address() {
 
   return (
     <div className="relative w-full h-[720px]">
+      <h1 className="text-32 lg:text-5xl text-[#272727] font-space-grotesk text-center my-10 font-bold">
+        Адреса заводов
+      </h1>
       {/* LEFT ZOOM UI — SENING VARIANTING */}
       <div className="absolute left-4 top-60 -translate-y-1/2 flex flex-col items-center z-50">
         <button
@@ -166,7 +169,7 @@ export default function Address() {
       </div>
 
       {/* SELECT */}
-      <div className="absolute top-4 right-4 z-50">
+      <div className="absolute top-24 right-4 z-50">
         <select
           value={mode}
           onChange={(e) => changeMode(e.target.value)}

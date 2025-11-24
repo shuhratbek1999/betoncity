@@ -41,10 +41,10 @@ const Info = () => {
           <div
             key={item.id}
             className={`${
-              index % 2 != 0 ? "sm:flex-row-reverse" : ""
-            } flex gap-8 flex-col sm:flex-row sm:justify-between`}
+              index % 2 != 0 ? "lg:flex-row-reverse" : ""
+            } flex gap-8 flex-col lg:flex-row lg:justify-between`}
           >
-            <div className="w-full sm:w-[48%]">
+            <div className="w-full lg:w-[48%] -mt-4">
               <h1 className="font-space-grotesk leading-10 xl:leading-16 font-bold text-32 lg:text-5xl text-secondary">
                 {item.title}
               </h1>
@@ -56,14 +56,14 @@ const Info = () => {
               </p>
             </div>
             <div
-              className={`images w-full sm:w-[48%] border-[3px] border-orange rounded-10 relative`}
+              className={`images h-80 lg:h-[400px] w-full lg:w-[48%] border-[3px] border-orange rounded-10 relative`}
             >
               <img
                 src={item.img}
                 alt={item.title}
                 className={`${
-                  index % 2 != 0 ? "left-4 -top-4" : "-left-4 -top-4"
-                } rounded-10 object-cover sm:absolute h-full w-full`}
+                  index % 2 != 0 ? "left-4 -top-3" : "-left-4 -top-3"
+                } rounded-10 object-cover absolute h-full w-full`}
               />
             </div>
           </div>

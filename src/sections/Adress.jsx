@@ -1,166 +1,191 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Adress() {
+export default function Address() {
   const mapRef = useRef(null);
-  const mapInstance = useRef(null);
-  const [open, setOpen] = useState(false);
+  const map = useRef(null);
+  const layers = useRef({});
+  const [mode, setMode] = useState("dark"); // DEFAULT DARK
 
   useEffect(() => {
-    if (!window.__ymaps_v2__) {
-      const script = document.createElement("script");
-      script.src =
-        "https://api-maps.yandex.ru/2.1/?apikey=d8d80a96-bfba-4810-baaf-e4a249cb1729&lang=ru_RU";
-      script.onload = () => {
-        window.__ymaps_v2__ = true;
-        window.ymaps.ready(initMap);
-      };
-      document.body.appendChild(script);
-    } else {
-      window.ymaps.ready(initMap);
-    }
+    loadYandex().then(initMap);
   }, []);
 
-  const initMap = () => {
-    if (!mapRef.current || mapInstance.current) return;
+  const loadYandex = () =>
+    new Promise((resolve) => {
+      if (window.ymaps3) return resolve();
+      const script = document.createElement("script");
+      script.src =
+        "https://api-maps.yandex.ru/v3/?apikey=d8d80a96-bfba-4810-baaf-e4a249cb1729&lang=ru_RU";
+      script.onload = resolve;
+      document.body.appendChild(script);
+    });
 
-    const map = new window.ymaps.Map(
-      mapRef.current,
-      {
-        center: [55.751244, 37.618423],
-        zoom: 9,
-        controls: ["zoomControl"],
-      },
-      {
-        suppressMapOpenBlock: true,
-        zoomControlPosition: { left: 15, top: 100 },
-      }
-    );
+  const initMap = async () => {
+    await window.ymaps3.ready;
 
-    mapInstance.current = map;
+    const {
+      YMap,
+      YMapDefaultSchemeLayer,
+      YMapDefaultSatelliteLayer,
+      YMapDefaultFeaturesLayer,
+      YMapMarker,
+    } = window.ymaps3;
 
-    // ⭐ MARKERLAR
+    // --- CREATE MAP ---
+    map.current = new YMap(mapRef.current, {
+      location: { center: [37.62, 55.75], zoom: 9 },
+      theme: "dark",
+    });
+
+    // --- LAYERS ---
+    layers.current.dark = new YMapDefaultSchemeLayer({
+      visible: true,
+      customization: [
+        { tags: { any: ["landscape"] }, stylers: { color: "#1c1c1e" } },
+        { tags: { any: ["road"] }, stylers: { color: "#2b2b2d" } },
+        { tags: { any: ["water"] }, stylers: { color: "#11151c" } },
+        { tags: { any: ["building"] }, stylers: { color: "#2c2c2e" } },
+      ],
+    });
+
+    layers.current.light = new YMapDefaultSchemeLayer({ visible: false });
+
+    layers.current.satellite = new YMapDefaultSatelliteLayer({
+      visible: false,
+    });
+
+    layers.current.hybrid = new YMapDefaultSatelliteLayer({
+      visible: false,
+      features: true,
+    });
+
+    // Correct layer order
+    map.current.addChild(layers.current.light);
+    map.current.addChild(layers.current.dark);
+    map.current.addChild(layers.current.satellite);
+    map.current.addChild(layers.current.hybrid);
+
+    map.current.addChild(new YMapDefaultFeaturesLayer());
+
+    // --- MARKERS ---
     const points = [
-      { coords: [55.7522, 37.6156] },
-      { coords: [55.7897, 37.679] },
-      { coords: [55.7, 37.62] },
-      { coords: [55.585, 37.6] },
-      { coords: [56.3952, 38.7122] },
-      { coords: [55.74, 37.5] },
-      { coords: [55.68, 37.8] },
+      [37.65, 55.75],
+      [37.69, 55.79],
+      [37.6, 55.7],
+      [37.55, 55.72],
+      [37.5, 55.68],
     ];
 
-    points.forEach((p) => {
-      const placemark = new window.ymaps.Placemark(
-        p.coords,
-        {},
-        { preset: "islands#yellowIcon" }
-      );
-      map.geoObjects.add(placemark);
+    points.forEach((coords) => {
+      const el = document.createElement("div");
+
+      el.style.cssText = `
+        width: 32px;
+        height: 32px;
+        background: #ffcc00;
+        border: 3px solid white;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        position: relative;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      `;
+
+      const dot = document.createElement("div");
+      dot.style.cssText = `
+        width: 10px;
+        height: 10px;
+        background: black;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      `;
+
+      el.appendChild(dot);
+      el.style.zIndex = 20;
+
+      map.current.addChild(new YMapMarker({ coordinates: coords }, el));
     });
   };
 
-  // ⭐ DARK MODE STYLE
-  const darkStyle = [
-    {
-      featureType: "all",
-      elementType: "geometry",
-      stylers: { color: "#0b0b0f" },
-    },
-    { featureType: "landscape", stylers: { color: "#0b0b0f" } },
-    { featureType: "road", stylers: { color: "#1c1f33" } },
-    {
-      featureType: "road",
-      elementType: "labels.text.fill",
-      stylers: { color: "#6a7cff" },
-    },
-    {
-      featureType: "road",
-      elementType: "geometry.stroke",
-      stylers: { color: "#2a2d45" },
-    },
-    { featureType: "poi", stylers: { color: "#14141a" } },
-    { featureType: "poi.park", stylers: { color: "#0f1e14" } },
-    {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: { color: "#3cb371" },
-    },
-    { featureType: "water", stylers: { color: "#0a0e19" } },
-    { featureType: "administrative", stylers: { color: "#1f1f26" } },
-    { featureType: "transit", stylers: { color: "#1a1e2d" } },
-  ];
+  // --- CHANGE MODE ---
+  const changeMode = (value) => {
+    setMode(value);
 
-  const changeLayer = (type) => {
-    const map = mapInstance.current;
-    if (!map) return;
+    Object.values(layers.current).forEach((l) => l.update({ visible: false }));
+    layers.current[value].update({ visible: true });
+  };
 
-    // avval style'ni o‘chirib qo‘yamiz
-    map.options.set("yandexMapStyle", null);
+  // --- ZOOM BUTTONS (React — ishlaydi!) ---
+  const zoomIn = () => {
+    if (!map.current) return;
 
-    if (type === "map") {
-      map.setType("yandex#map");
-    }
-    if (type === "satellite") {
-      map.setType("yandex#satellite");
-    }
-    if (type === "hybrid") {
-      map.setType("yandex#hybrid");
-    }
-    if (type === "dark") {
-      map.setType("yandex#map");
-      map.options.set("yandexMapStyle", darkStyle);
-    }
+    const { center, zoom } = map.current._props.location;
 
-    setOpen(false);
+    map.current.update({
+      location: { center, zoom: zoom + 1 },
+    });
+  };
+
+  const zoomOut = () => {
+    if (!map.current) return;
+
+    const { center, zoom } = map.current._props.location;
+
+    map.current.update({
+      location: { center, zoom: zoom - 1 },
+    });
   };
 
   return (
-    <div className="relative w-full h-[800px]">
-      <h1 className="text-center text-4xl font-bold h-28">Адреса заводов</h1>
-
-      {/* SLOI SELECT */}
-      <div className="absolute top-32 right-6 z-50">
-        <div
-          onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 bg-white shadow-lg px-5 py-2 rounded-lg cursor-pointer"
+    <div className="relative w-full h-[720px]">
+      {/* LEFT ZOOM UI — SENING VARIANTING */}
+      <div className="absolute left-4 top-60 -translate-y-1/2 flex flex-col items-center z-50">
+        <button
+          onClick={zoomIn}
+          className="w-8 h-8 bg-gray-100 font-black text-3xl rounded-md shadow flex items-center justify-center"
         >
-          <span className="text-sm font-medium">Слои</span>
+          +
+        </button>
+
+        <div className="w-1.5 h-20 bg-[#686666]"></div>
+
+        <div className="w-8 h-4 bg-white rounded-md shadow flex items-center justify-center text-[10px]">
+          ····
         </div>
 
-        {open && (
-          <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg overflow-hidden w-40 text-sm">
-            <div
-              className="px-3 py-2 hover:bg-gray-100"
-              onClick={() => changeLayer("map")}
-            >
-              🗺 Схема
-            </div>
-            <div
-              className="px-3 py-2 hover:bg-gray-100"
-              onClick={() => changeLayer("satellite")}
-            >
-              🛰 Спутник
-            </div>
-            <div
-              className="px-3 py-2 hover:bg-gray-100"
-              onClick={() => changeLayer("hybrid")}
-            >
-              🌍 Гибрид
-            </div>
-            <div
-              className="px-3 py-2 hover:bg-gray-100"
-              onClick={() => changeLayer("dark")}
-            >
-              🌑 Тёмная тема
-            </div>
-          </div>
-        )}
+        <div className="w-1.5 h-20 bg-[#686666]"></div>
+
+        <button
+          onClick={zoomOut}
+          className="w-8 h-8 bg-gray-100 font-black rounded-md shadow flex items-center justify-center text-3xl"
+        >
+          –
+        </button>
+      </div>
+
+      {/* SELECT */}
+      <div className="absolute top-4 right-4 z-50">
+        <select
+          value={mode}
+          onChange={(e) => changeMode(e.target.value)}
+          className="bg-white px-4 py-2 shadow text-sm font-medium"
+        >
+          <option value="light">🌎 Схема</option>
+          <option value="satellite">🛰 Спутник</option>
+          <option value="hybrid">🌍 Гибрид</option>
+        </select>
       </div>
 
       {/* MAP */}
-      <div className="w-full h-[700px]">
-        <div ref={mapRef} className="w-full h-full overflow-hidden"></div>
-      </div>
+      <div
+        ref={mapRef}
+        className="w-full h-full overflow-hidden"
+        style={{
+          filter: mode === "dark" ? "brightness(0.75)" : "none",
+        }}
+      />
     </div>
   );
 }

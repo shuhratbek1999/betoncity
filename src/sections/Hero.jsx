@@ -103,22 +103,24 @@ export default function Hero() {
         <div className="absolute left-[41%] bottom-2 lg:bottom-10">
           <div className="relative  md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 max-md:w-85 max-md:h-85 flex items-center justify-center left-[43%]">
             <div className="absolute inset-0 bg-black/50 rounded-full"></div>
-            <div className="absolute w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
+            <div className="absolute cursor-pointer w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
               <div className="absolute inset-0 bg-gray-100/30 rounded-full"></div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="#f6ae3f"
-                className="size-6 lg:size-10 animate-bounce-y opacity-100"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
-                />
-              </svg>
+              <a href="#calculator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="#f6ae3f"
+                  className="size-6 lg:size-10 animate-bounce-y opacity-100"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                  />
+                </svg>
+              </a>
             </div>
             <svg
               viewBox="0 0 200 200"
@@ -127,12 +129,7 @@ export default function Hero() {
               <defs>
                 <path
                   id="circlePath"
-                  d="
-      M 100, 100
-      m -73, 0
-      a 73,73 0 1,1 146,0
-      a 73,73 0 1,1 -146,0
-    "
+                  d="M 100, 100 m -73, 0 a 73,73 0 1,1 146,0 a 73,73 0 1,1 -146,0"
                 />
               </defs>
 

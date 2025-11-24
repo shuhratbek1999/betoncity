@@ -30,11 +30,17 @@ const Sertifikat = () => {
     setOpen(true);
   };
   return (
-    <div className="container-base flex flex-col sm:flex-row my-20 gap-10">
-      <div className="video w-full sm:w-1/2 h-[370px] border-[3px] border-orange rounded-10">
-        <video src="blob:https://rutube.ru/be62cbcd-6144-49d5-8cc8-fc50cc69416a"></video>
+    <div className="container-base flex flex-col gl:flex-row my-20 gap-10">
+      <div className="video w-full gl:w-1/2 h-[370px] border-[3px] border-orange rounded-10 relative">
+        <iframe
+          className="w-full h-full absolute -top-3 left-3 rounded-10"
+          src="https://rutube.ru/play/embed/a27b86b835dd875d82086de429cb9357/"
+          style={{ border: "none" }}
+          allow="clipboard-write; autoplay"
+          allowFullScreen
+        ></iframe>
       </div>
-      <div className="sertifikat_info w-full sm:w-1/2">
+      <div className="sertifikat_info w-full gl:w-1/2">
         <img
           src="https://static.tildacdn.com/tild3665-3330-4430-b136-353462626561/solar_stars-line-duo.png"
           alt=""

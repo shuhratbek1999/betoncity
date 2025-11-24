@@ -169,7 +169,10 @@ const Calculator = () => {
     document.body.appendChild(script);
   }, []);
   return (
-    <div className="container-base p-4 my-20 text-18 font-montserrat">
+    <div
+      className="container-base p-4 my-20 text-18 font-montserrat"
+      id="calculator"
+    >
       <h6 className="font-bold text-orange text-center">КАЛЬКУЛЯТОР</h6>
       <h1 className="text-secondary font-bold font-space-grotesk my-8 lg:text-5xl text-center">
         Узнайте точную стоимость онлайн

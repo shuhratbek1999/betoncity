@@ -101,7 +101,7 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="hidden md:flex">
+          <a href="#" className="hidden sm:flex ml-10 gl:ml-2">
             <img className="h-10" src={LogoImg} alt="Logo" />
           </a>
 
@@ -185,7 +185,7 @@ export default function Header() {
                 />
               </a>
             </div>
-            <a href="#" className="shrink-0 sm:flex hidden">
+            <a href="#" className="shrink-0 lg:flex gl:flex hidden">
               <img className="h-12.5" src={YandexReviews} alt="img" />
             </a>
           </div>

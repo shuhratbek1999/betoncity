@@ -39,6 +39,7 @@
   --spacing-188: 188px;
   --spacing-282: 282px;
   --radius-10: 10px;
+  --breakpoint-gl: 976px;
 }
 
 @layer base {
@@ -177,20 +178,6 @@
   background-color: transparent !important;
 }
 
-/* .map-dark-filter {
-  filter: grayscale(10%) saturate(70%) brightness(45%) contrast(112%);
-  -webkit-filter: grayscale(10%) saturate(70%) brightness(45%) contrast(112%);
-}
-.map-dark-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
-  mix-blend-mode: multiply;
-}
-.map-marker-bright {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
-} */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -200,4 +187,19 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* IE */
   scrollbar-width: none; /* Firefox */
+}
+@layer components {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 13px !important;
+    height: 13px !important;
+    background: black !important;
+    opacity: 1;
+    border-radius: 9999px;
+  }
+
+  .custom-pagination .swiper-pagination-bullet-active {
+    width: 13px !important;
+    height: 13px !important;
+    background: #ef9c1c !important;
+  }
 }

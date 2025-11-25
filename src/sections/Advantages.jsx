@@ -46,7 +46,7 @@ const Advantages = () => {
       <h4 className="text-center text-22 font-montserrat font-normal text-gray-soft my-6">
         Смотрите чем мы отличаемся от других заводов-производителей
       </h4>
-      <div className="advantages-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 :*:border-b *:border-[#d7d7d7]">
+      <div className="advantages-list grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 :*:border-b *:border-[#d7d7d7]">
         {advantages.map((a, i) => (
           <div
             key={a.id}

@@ -46,14 +46,60 @@ export default function Hero() {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start overflow-hidden">
-      <img
-        className="absolute bottom-0 top-32 left-7 h-full -translate-x-1/2 w-[260%] max-w-none object-contain pointer-events-none md:bottom-auto md:top-0 md:left-0 md:translate-x-0 md:w-full md:h-full md:object-cover"
-        src={HeroBgImg}
-        alt=""
-      />
-      <div className="absolute md:hidden top-[38%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#fcfcfd]/90 to-transparent pointer-events-none"></div>
-      <div className="container-base z-20 mt-3 md:mt-10 xl:mt-[15%] 2xl:mt-[10%]">
+    <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start items-center overflow-hidden">
+      <div className="images relative top-0 w-full h-[calc(100vh-64px)] z-10">
+        <img
+          className="absolute top-[10%] h-full -translate-x-1/2 w-[250%] max-w-none object-contain pointer-events-none md:bottom-auto md:top-0 md:left-0 md:translate-x-0 md:w-full md:h-full md:object-cover"
+          src={HeroBgImg}
+          alt=""
+        />
+        <div className="absolute md:hidden top-0 left-0 z-10 w-full h-2/3 bg-linear-to-b from-[#fcfcfd] to-transparent pointer-events-none"></div>
+        <div className="z-30 absolute bottom-[18%] md:bottom-[10%] xl:bottom-[12%] left-[45%]">
+          <div className="relative max-sm:w-85 max-sm:h-85 md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/50 rounded-full"></div>
+            <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gray-100/20 rounded-full"></div>
+              <a href="#calculator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="#f6ae3f"
+                  className="size-6 md:size-10 animate-bounce-y opacity-100"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                  />
+                </svg>
+              </a>
+            </div>
+            <svg
+              viewBox="0 0 200 200"
+              className="absolute w-full h-full animate-rotate-circle"
+            >
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M 100, 100 m -73, 0 a 73,73 0 1,1 146,0 a 73,73 0 1,1 -146,0"
+                />
+              </defs>
+
+              <text fill="white" fontSize="16" letterSpacing="2.5">
+                <textPath
+                  href="#circlePath"
+                  className="text-white font-space-grotesk text-xl"
+                >
+                  Рассчитать стоимость Рассчитать стоимость Рассчитать стоимость
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div className="container-base absolute top-0 z-20 mt-3 md:mt-10 xl:mt-[15%] 2xl:mt-[10%]">
         <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold text-center md:text-left">
           ПРОИЗВОДСТВО <br />{" "}
           <span className="text-nowrap inline-block">И ДОСТАВКА БЕТОНА</span>{" "}
@@ -103,50 +149,6 @@ export default function Hero() {
             {checkError && (
               <span className="text-red-500 text-xs -mt-3">{checkError}</span>
             )}
-          </div>
-        </div>
-        <div className="absolute left-[46%] bottom-[10%] lg:bottom-10">
-          <div className="relative max-sm:w-85 max-sm:h-85 md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/50 rounded-full"></div>
-            <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gray-100/20 rounded-full"></div>
-              <a href="#calculator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="#f6ae3f"
-                  className="size-6 md:size-10 animate-bounce-y opacity-100"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
-                  />
-                </svg>
-              </a>
-            </div>
-            <svg
-              viewBox="0 0 200 200"
-              className="absolute w-full h-full animate-rotate-circle"
-            >
-              <defs>
-                <path
-                  id="circlePath"
-                  d="M 100, 100 m -73, 0 a 73,73 0 1,1 146,0 a 73,73 0 1,1 -146,0"
-                />
-              </defs>
-
-              <text fill="white" fontSize="16" letterSpacing="2.5">
-                <textPath
-                  href="#circlePath"
-                  className="text-white font-space-grotesk text-xl"
-                >
-                  Рассчитать стоимость Рассчитать стоимость Рассчитать стоимость
-                </textPath>
-              </text>
-            </svg>
           </div>
         </div>
       </div>

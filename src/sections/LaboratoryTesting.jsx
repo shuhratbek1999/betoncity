@@ -86,20 +86,16 @@ const LaboratoryTesting = () => {
         ))}
       </div>
       <nav className="my-12 w-full flex justify-center">
-        <ul className="flex items-center w-full sm:w-full justify-between gap-x-2 gap-y-6 sm:gap-0 sm:justify-between flex-wrap">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-2 lg:gap-x-6">
           {experiences.map((ex) => (
-            <li
-              key={ex.id}
-              className="flex items-center justify-center w-[48%]
-               sm:w-1/4"
-            >
+            <li key={ex.id} className="">
               <a href="#" className="flex flex-col items-center justify-center">
                 <img
                   className="w-90 h-90 mb-6 object-contain"
                   src={ex.img}
                   alt={ex.title}
                 />
-                <h4 className="text-center w-full sm:w-9/12 text-sm leading-5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
+                <h4 className="text-center w-9/12 lg:w-full text-sm leading-6 sm:text-18 sm:leading-6 font-bold font-space-grotesk text-gray-soft">
                   {ex.title}
                 </h4>
               </a>

@@ -51,11 +51,11 @@ const CalculationBiton = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="container-base flex flex-col items-center">
-        <h1 className="text-32 lg:text-5xl font-bold text-white text-center">
+      <div className="container-base flex flex-col items-center justify-center">
+        <h1 className="text-32 md:text-5xl font-bold text-white text-center">
           Рассчитать стоимость бетона
         </h1>
-        <h4 className="font-normal text-center sm:text-left leading-6 text-white text-2xl my-4">
+        <h4 className="font-normal text-center lg:text-left leading-6 text-white text-2xl my-4">
           Наш менеджер рассчитает стоимость вашего заказа в течении 10 минут
         </h4>
         <Button

@@ -58,16 +58,23 @@ const Footer = () => {
             <h1 className="text-white text-18 font-space-grotesk font-bold">
               Контакты
             </h1>
-            <img
-              src="https://static.tildacdn.com/tild3965-3131-4139-b564-396666663032/logos_whatsapp-icon.png"
-              alt="whatsapp img"
-              className="w-10 h-10 object-contain"
-            />
-            <img
-              src="https://static.tildacdn.com/tild3063-6130-4630-a138-383230643434/Link__tgsvg.svg"
-              alt="telegram img"
-              className="w-10 h-10 object-contain"
-            />
+            <a
+              href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+              className="shrink-0"
+            >
+              <img
+                src="https://static.tildacdn.com/tild3965-3131-4139-b564-396666663032/logos_whatsapp-icon.png"
+                alt="whatsapp img"
+                className="w-10 h-10 object-contain"
+              />
+            </a>
+            <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
+              <img
+                src="https://static.tildacdn.com/tild3063-6130-4630-a138-383230643434/Link__tgsvg.svg"
+                alt="telegram img"
+                className="w-10 h-10 object-contain"
+              />
+            </a>
           </div>
         </div>
         <div className="menu flex flex-col sm:flex-row justify-between gap-6 my-4">

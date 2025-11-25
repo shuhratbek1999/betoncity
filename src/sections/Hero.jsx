@@ -52,7 +52,7 @@ export default function Hero() {
         src={HeroBgImg}
         alt=""
       />
-      <div className="absolute md:hidden top-[35%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#ffff]/90 to-transparent pointer-events-none"></div>
+      <div className="absolute md:hidden top-[29%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#fcfcfc]/90 to-transparent pointer-events-none"></div>
       <div className="container-base z-20">
         <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-4 lg:mt-20 text-center md:text-left">
           ПРОИЗВОДСТВО <br />{" "}

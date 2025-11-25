@@ -210,7 +210,7 @@ function App() {
               Мы поможем! <br />
               Для вас <strong>ПРОМОКОД</strong>
             </div>
-            <Button className="w-full h-76 bg-gray-200 text-orange font-semibold text-base sm:text-3xl rounded-10">
+            <Button className="w-full h-14 sm:h-76 bg-gray-200 text-orange font-semibold text-base sm:text-3xl rounded-10">
               БEТОНСИТИСТРОЙ2025
             </Button>
             <div className="flex items-center justify-between w-full my-4">

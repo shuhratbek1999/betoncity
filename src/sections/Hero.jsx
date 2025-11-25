@@ -48,13 +48,12 @@ export default function Hero() {
   return (
     <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start overflow-hidden">
       <img
-        className="absolute w-full bg-no-repeat bottom-[25%] -left-40 scale-[250%] md:left-0 md:scale-100
-         transform bg-contain md:object-cover md:w-full md:h-full md:top-0"
+        className="absolute bottom-0 top-32 left-7 h-full -translate-x-1/2 w-[260%] max-w-none object-contain pointer-events-none md:bottom-auto md:top-0 md:left-0 md:translate-x-0 md:w-full md:h-full md:object-cover"
         src={HeroBgImg}
         alt=""
       />
-      <div className="absolute md:hidden top-[29%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#fcfcfc]/90 to-transparent pointer-events-none"></div>
-      <div className="container-base z-20 md:mt-10 2xl:mt-[7%]">
+      <div className="absolute md:hidden top-[38%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#fcfcfd]/90 to-transparent pointer-events-none"></div>
+      <div className="container-base z-20 mt-3 md:mt-10 xl:mt-[15%] 2xl:mt-[10%]">
         <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold text-center md:text-left">
           ПРОИЗВОДСТВО <br />{" "}
           <span className="text-nowrap inline-block">И ДОСТАВКА БЕТОНА</span>{" "}
@@ -71,7 +70,7 @@ export default function Hero() {
           </strong>
         </div>
         <div className="form">
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 mt-2 md:my-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 mt-2 my-2">
             <div className="phone">
               <PhoneNumberInput
                 className="h-76 lg:w-270 rounded-10"

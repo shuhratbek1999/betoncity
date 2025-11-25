@@ -116,7 +116,7 @@ export default function Header() {
                 {/* Main link */}
                 <a
                   href={`#${i !== 0 ? item.label : ""}`}
-                  className={`flex text-base items-center text-secondary gap-1 font-space-grotesk ${
+                  className={`flex text-base items-center whitespace-nowrap text-secondary gap-1 font-space-grotesk ${
                     item.children
                       ? "after:content-[''] after:border-4 after:border-transparent after:border-t-current after:mt-0.75 after:transition-transform after:duration-300 group-hover:after:rotate-180 group-hover:after:mt-0"
                       : ""

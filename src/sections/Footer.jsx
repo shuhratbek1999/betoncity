@@ -80,18 +80,18 @@ const Footer = () => {
         <div className="menu flex flex-col sm:flex-row justify-between gap-6 my-4">
           <div className="menu-item flex flex-col gap-y-4">
             <div className="links flex flex-col sm:flex-row justify-between sm:items-center sm:w-60">
-              <a className="text-white font-space-grotesk" href="#">
+              <a className="text-white font-space-grotesk" href="#Цены">
                 Цены
               </a>
-              <a className="text-white font-space-grotesk" href="#">
+              <a className="text-white font-space-grotesk" href="#Проекты">
                 Проекты
               </a>
             </div>
             <div className="links flex flex-col sm:flex-row justify-between sm:items-center">
-              <a className="text-white font-space-grotesk" href="#">
+              <a className="text-white font-space-grotesk" href="#О нас">
                 О нас
               </a>
-              <a className="text-white font-space-grotesk" href="#">
+              <a className="text-white font-space-grotesk" href="#Контакты">
                 Контакты
               </a>
             </div>

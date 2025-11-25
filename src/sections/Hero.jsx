@@ -48,13 +48,14 @@ export default function Hero() {
   return (
     <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start overflow-hidden">
       <img
-        className="absolute bg-contain w-full bottom-[25%] -left-44 scale-[250%] bg-left sm:left-0 md:top-80 xl:-top-6 lg:bg-cover xl:bg-center bg-no-repeat transform sm:scale-[300%] md:scale-[350%] xl:scale-110"
+        className="absolute w-full bg-no-repeat bottom-[25%] -left-40 scale-[250%] md:left-0 md:scale-100
+         transform bg-contain md:object-cover md:w-full md:h-full md:top-0"
         src={HeroBgImg}
         alt=""
       />
       <div className="absolute md:hidden top-[29%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#fcfcfc]/90 to-transparent pointer-events-none"></div>
-      <div className="container-base z-20">
-        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-4 lg:mt-20 text-center md:text-left">
+      <div className="container-base z-20 md:mt-10 2xl:mt-[7%]">
+        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold text-center md:text-left">
           ПРОИЗВОДСТВО <br />{" "}
           <span className="text-nowrap inline-block">И ДОСТАВКА БЕТОНА</span>{" "}
           <br />
@@ -105,7 +106,7 @@ export default function Hero() {
             )}
           </div>
         </div>
-        <div className="absolute left-[45%] bottom-[10%] lg:bottom-14">
+        <div className="absolute left-[46%] bottom-[10%] lg:bottom-10">
           <div className="relative max-sm:w-85 max-sm:h-85 md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
             <div className="absolute inset-0 bg-black/50 rounded-full"></div>
             <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">

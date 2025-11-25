@@ -43,7 +43,7 @@
   --radius-10: 10px;
   --breakpoint-gl: 976px;
   --breakpoint-xs: 480px;
-  --breakpoint-xd: 360px;
+  --breakpoint-xd: 380px;
 }
 
 @layer base {

@@ -11,8 +11,8 @@ export default function PhoneNumberInput({
   const validate = (val) => {
     if (onChange) onChange(val);
 
-    if (!val) return setError("Введите номер телефона");
-    if (val.length < 8) return setError("Неверный номер телефона");
+    // if (!val) return setError("Введите номер телефона");
+    // if (val.length < 8) return setError("Неверный номер телефона");
 
     setError("");
   };

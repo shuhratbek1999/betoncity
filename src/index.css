@@ -36,11 +36,14 @@
   --spacing-500: 500px;
   --spacing-850: 850px;
   --spacing-135: 135px;
+  --spacing-150: 150px;
+  --spacing-260: 260px;
   --spacing-188: 188px;
   --spacing-282: 282px;
   --radius-10: 10px;
   --breakpoint-gl: 976px;
   --breakpoint-xs: 480px;
+  --breakpoint-xd: 360px;
 }
 
 @layer base {
@@ -92,6 +95,9 @@
   .w-500 {
     width: var(--spacing-500);
   }
+  .w-260 {
+    width: var(--spacing-260);
+  }
   .h-135 {
     height: var(--spacing-135);
   }
@@ -100,6 +106,9 @@
   }
   .h-550 {
     height: var(--spacing-550);
+  }
+  .h-150 {
+    height: var(--spacing-150);
   }
   .h-850 {
     height: var(--spacing-850);
@@ -147,7 +156,7 @@
       }
     }
     .animate-rotate-circle {
-      animation: rotate-circle 20s linear infinite;
+      animation: rotate-circle 10s linear infinite;
     }
   }
   @keyframes bounce-y {

@@ -110,17 +110,17 @@ export default function Header() {
           </a>
 
           {/* Navigation */}
-          <nav className="hidden xl:flex items-center gap-8 font-medium">
+          <nav className="hidden xl:flex items-center gap-16 font-medium">
             {navItems.map((item, i) => (
               <div key={i} className="relative group">
                 {/* Main link */}
                 <a
                   href={`#${i !== 0 ? item.label : ""}`}
-                  className={`flex text-sm items-center gap-1 ${
+                  className={`flex text-base items-center text-secondary gap-1 font-space-grotesk ${
                     item.children
                       ? "after:content-[''] after:border-4 after:border-transparent after:border-t-current after:mt-0.75 after:transition-transform after:duration-300 group-hover:after:rotate-180 group-hover:after:mt-0"
                       : ""
-                  } transition hover:text-secondary/75`}
+                  } transition`}
                 >
                   {item.label}
                 </a>
@@ -166,14 +166,17 @@ export default function Header() {
               </a>
 
               <a
-                href="#"
+                href="mailto:zakaz@betoncitystroy.ru"
                 className="hover:text-secondary/75 underline text-[11px] lg:text-sm"
               >
                 zakaz@betoncitystroy.ru
               </a>
             </div>
             <div className="flex items-center gap-1">
-              <a href="#" className="shrink-0">
+              <a
+                href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                className="shrink-0"
+              >
                 <img
                   className="size-10"
                   src="https://optim.tildacdn.com/tild3965-3131-4139-b564-396666663032/-/cover/48x48/center/center/-/format/webp/logos_whatsapp-icon.png.webp"
@@ -181,7 +184,7 @@ export default function Header() {
                 />
               </a>
 
-              <a href="#" className="shrink-0">
+              <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
                 <img
                   className="size-10"
                   src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -189,7 +192,10 @@ export default function Header() {
                 />
               </a>
             </div>
-            <a href="#" className="shrink-0 lg:flex gl:flex hidden">
+            <a
+              href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
+              className="shrink-0 lg:flex gl:flex hidden"
+            >
               <img className="h-12.5" src={YandexReviews} alt="img" />
             </a>
           </div>
@@ -228,7 +234,7 @@ export default function Header() {
             <div className="flex ml-10 lg:ml-0 items-center max-sm:w-full md:w-9/12 justify-between max-sm:ml-12 lg:gap-4">
               <div className="flex flex-col md:flex-row md:items-center gap-x-3">
                 <a
-                  href="#"
+                  href="mailto:zakaz@betoncitystroy.ru"
                   className="hover:text-secondary/75 max-sm:hidden underline text-sm lg:text-sm"
                 >
                   zakaz@betoncitystroy.ru
@@ -241,7 +247,10 @@ export default function Header() {
                 </a>
               </div>
               <div className="items-center gap-1 hidden lg:flex">
-                <a href="#" className="shrink-0">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                  className="shrink-0"
+                >
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3965-3131-4139-b564-396666663032/-/cover/48x48/center/center/-/format/webp/logos_whatsapp-icon.png.webp"
@@ -249,7 +258,7 @@ export default function Header() {
                   />
                 </a>
 
-                <a href="#" className="shrink-0">
+                <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -257,7 +266,10 @@ export default function Header() {
                   />
                 </a>
               </div>
-              <a href="#" className="shrink-0 lg:flex hidden">
+              <a
+                href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
+                className="shrink-0 lg:flex hidden"
+              >
                 <img className="h-12.5" src={YandexReviews} alt="img" />
               </a>
             </div>
@@ -332,7 +344,10 @@ export default function Header() {
                 </a>
               </div>
               <div className="flex items-center gap-1">
-                <a href="#" className="shrink-0">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                  className="shrink-0"
+                >
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3965-3131-4139-b564-396666663032/-/cover/48x48/center/center/-/format/webp/logos_whatsapp-icon.png.webp"
@@ -340,7 +355,7 @@ export default function Header() {
                   />
                 </a>
 
-                <a href="#" className="shrink-0">
+                <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -349,7 +364,10 @@ export default function Header() {
                 </a>
               </div>
             </div>
-            <a href="#" className="shrink-0 flex w-10/12">
+            <a
+              href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
+              className="shrink-0 flex w-10/12"
+            >
               <img className="h-12.5" src={YandexReviews} alt="img" />
             </a>
           </div>

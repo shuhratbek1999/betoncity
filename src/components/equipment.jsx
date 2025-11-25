@@ -45,24 +45,24 @@ const Equipment = () => {
           </span>
         </div>
       </div>
-      <div className="equipments w-full md:w-10/12 lg:w-5/12 flex flex-col items-start gap-4">
+      <div className="equipments w-full md:w-10/12 lg:w-6/12 flex flex-col items-end gap-4">
         {equipments.map((ex) => (
           <div
             key={ex.id}
-            className="flex flex-col sm:flex-row justify-center gap-4 border-b-2 border-b-orange pb-4"
+            className="flex flex-col w-full lg:w-11/12 sm:flex-row justify-between gap-4 border-b-2 border-b-orange pb-1"
           >
             <div className="eq_img w-full flex justify-center sm:justify-start sm:w-1/2">
               <img
-                className="w-9/12 sm:w-full object-contain"
+                className="h-150 w-260 sm:w-full object-contain"
                 src={ex.img}
                 alt={ex.name}
               />
             </div>
             <div className="info w-full sm:w-1/2">
-              <h2 className="text-18 font-bold font-space-grotesk text-secondary">
+              <h2 className="text-18 font-bold font-space-grotesk text-secondary mb-3">
                 {ex.name}
               </h2>
-              <div className="extra my-1 flex justify-between items-center">
+              <div className="extra my-1.5 flex justify-between items-center">
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Бесплатная выгрузка:
                 </h6>
@@ -70,7 +70,7 @@ const Equipment = () => {
                   {ex.free}ч.
                 </p>
               </div>
-              <div className="extra my-1 flex justify-between items-center">
+              <div className="extra my-1.5 flex justify-between items-center">
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Объем:
                 </h6>
@@ -78,7 +78,7 @@ const Equipment = () => {
                   {ex.space}
                 </p>
               </div>
-              <div className="extra my-1 flex justify-between items-center">
+              <div className="extra my-1.5 flex justify-between items-center">
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Длина лотка:
                 </h6>
@@ -86,7 +86,7 @@ const Equipment = () => {
                   {ex.arrow_length}
                 </p>
               </div>
-              <div className="extra my-1 flex justify-between items-center">
+              <div className="extra my-1.5 flex justify-between items-center">
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Высота подачи:
                 </h6>

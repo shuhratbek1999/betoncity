@@ -85,7 +85,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-[#f6f6f6]">
         <Hero />
         <Calculator />
         <Experience />
@@ -104,12 +104,12 @@ function App() {
         <Projects />
         <LaboratoryTesting />
         <Plant />
-        <div className="bg-[radial-gradient(#cfcfcf_1px,transparent_1px)] bg-size-[40px_40px] pt-6 lg:pt-32 pb-8 bg-gray-100">
+        <div className="bg-[radial-gradient(#cfcfcf_1px,transparent_1px)] bg-size-[40px_40px] pt-6 lg:pt-32 pb-8">
           <Equipment />
         </div>
         <Carousel slides={images} interval={3000} />
         <Sertifikat />
-        <div className="img lg:h-435 w-full lg:mb-20 overflow-x-hidden">
+        <div className="img lg:h-435 w-full lg:mb-20 overflow-hidden">
           <img
             src="https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg"
             className="w-full object-contain"
@@ -148,8 +148,10 @@ function App() {
         </div>
         <div
           className={`${
-            open ? "-top-28" : "-top-14"
-          } icon w-14 h-14 rounded-full flex justify-center items-center absolute right-6 cursor-pointer`}
+            open
+              ? "-top-28 w-12 h-12 right-14 shadow-[0px_0px_20px_0px_#0000004d]"
+              : "-top-14 w-[60px] h-[60px] right-12 shadow-[0px_0px_20px_5px_#0000004d]"
+          } icon rounded-full flex justify-center items-center absolute cursor-pointer transition duration-200 ease-in-out`}
           onClick={() => setOpen(true)}
         >
           <img
@@ -159,18 +161,18 @@ function App() {
         </div>
         <div
           className={`${
-            open ? "flex" : "hidden"
-          } icon w-14 h-14 rounded-full bg-white justify-center items-center absolute -top-14 right-6 cursor-pointer`}
+            open ? "flex shadow-[0px_0px_20px_5px_#0000004d]" : "hidden"
+          } icon w-[60px] h-[60px] rounded-full bg-white justify-center items-center absolute -top-14 right-12 cursor-pointer`}
           onClick={() => setOpen(false)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20px"
-            height="20px"
+            width="25px"
+            height="25px"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"

@@ -6,8 +6,8 @@ import FancyCheckbox from "../components/checkbox";
 import Modal from "../components/Modal";
 import { isValidPhoneNumber } from "react-phone-number-input";
 export default function Hero() {
-  const [phone, setPhone] = useState("");
   const [modalCheck, setmodalCheck] = useState(false);
+  const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
   const [checkError, setcheckError] = useState("");
@@ -46,16 +46,21 @@ export default function Hero() {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div
-      className="relative overflow-hidden h-[calc(100vh-64px)] flex flex-col justify-start bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: `url(${HeroBgImg})` }}
-    >
-      <div className="container-base">
-        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-4 lg:mt-14 text-center lg:text-left">
-          ПРОИЗВОДСТВО <br /> И ДОСТАВКА БЕТОНА <br />
+    <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start overflow-hidden">
+      <img
+        className="absolute bg-contain w-full bottom-[25%] -left-44 scale-[250%] bg-left sm:left-0 md:top-80 xl:-top-6 lg:bg-cover xl:bg-center bg-no-repeat transform sm:scale-[300%] md:scale-[350%] xl:scale-110"
+        src={HeroBgImg}
+        alt=""
+      />
+      <div className="absolute md:hidden top-[35%] left-0 z-10 w-full h-3/12 bg-linear-to-b from-[#ffff]/90 to-transparent pointer-events-none"></div>
+      <div className="container-base z-20">
+        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold mt-4 lg:mt-20 text-center md:text-left">
+          ПРОИЗВОДСТВО <br />{" "}
+          <span className="text-nowrap inline-block">И ДОСТАВКА БЕТОНА</span>{" "}
+          <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
-        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl my-4">
+        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl mt-2 md:my-4">
           Напрямую с завода
           <strong className="ml-1">
             от 2 200 р/м3 по{" "}
@@ -65,7 +70,7 @@ export default function Hero() {
           </strong>
         </div>
         <div className="form">
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 my-4">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 mt-2 md:my-2">
             <div className="phone">
               <PhoneNumberInput
                 className="h-76 lg:w-270 rounded-10"
@@ -100,11 +105,11 @@ export default function Hero() {
             )}
           </div>
         </div>
-        <div className="absolute left-[41%] bottom-2 lg:bottom-10">
-          <div className="relative  md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 max-md:w-85 max-md:h-85 flex items-center justify-center left-[43%]">
+        <div className="absolute left-[45%] bottom-[10%] lg:bottom-14">
+          <div className="relative max-sm:w-85 max-sm:h-85 md:w-135 md:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
             <div className="absolute inset-0 bg-black/50 rounded-full"></div>
-            <div className="absolute cursor-pointer w-12 h-12 lg:w-20 lg:h-20 rounded-full z-10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gray-100/30 rounded-full"></div>
+            <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gray-100/20 rounded-full"></div>
               <a href="#calculator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +117,7 @@ export default function Hero() {
                   viewBox="0 0 24 24"
                   strokeWidth="2"
                   stroke="#f6ae3f"
-                  className="size-6 lg:size-10 animate-bounce-y opacity-100"
+                  className="size-6 md:size-10 animate-bounce-y opacity-100"
                 >
                   <path
                     strokeLinecap="round"
@@ -133,13 +138,11 @@ export default function Hero() {
                 />
               </defs>
 
-              <text
-                fill="white"
-                fontSize="16"
-                fontWeight="bold"
-                letterSpacing="2.5"
-              >
-                <textPath href="#circlePath" className="font-roman">
+              <text fill="white" fontSize="16" letterSpacing="2.5">
+                <textPath
+                  href="#circlePath"
+                  className="text-white font-space-grotesk text-xl"
+                >
                   Рассчитать стоимость Рассчитать стоимость Рассчитать стоимость
                 </textPath>
               </text>

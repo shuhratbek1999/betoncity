@@ -276,6 +276,8 @@ const Prices = () => {
   const [error, setError] = useState("");
   const [textes, setText] = useState("Заказать бетон на гравийном щебне");
   const getTextBtn = (key) => {
+    console.log(key);
+
     switch (key) {
       case 1:
         setText("Заказать бетон на гравийном щебне");
@@ -290,6 +292,9 @@ const Prices = () => {
         setText("Заказать тощий бетон");
         break;
       case 5:
+        setText("Заказать пескобетон");
+        break;
+      case 6:
         setText("Заказать керамзитобетон");
         break;
       default:

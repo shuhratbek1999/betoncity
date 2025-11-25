@@ -74,7 +74,37 @@ const Calculator = () => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const [errname, setNameError] = useState("");
+  const [week, setWeek] = useState({ start: "", end: "" });
   const [text, setText] = useState("Выберете вид продукции");
+  function getWeekRange() {
+    const today = new Date();
+
+    // JS bo‘yicha: 0 — yakshanba, 1 — dushanba, ...
+    const day = today.getDay();
+
+    const mondayOffset = day === 0 ? -6 : 1 - day;
+    const sundayOffset = day === 0 ? 0 : 7 - day;
+
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + mondayOffset);
+
+    const sunday = new Date(today);
+    sunday.setDate(today.getDate() + sundayOffset);
+
+    // Formatlash funksiyasi
+    const format = (date) =>
+      date.toLocaleDateString("ru-RU", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+
+    return {
+      start: format(monday),
+      end: format(sunday),
+    };
+  }
+
   const increase = (btn) => {
     setPercent((prev) => {
       const next = prev + 20;
@@ -163,10 +193,7 @@ const Calculator = () => {
     }
   };
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://smartcaptcha.yandexcloud.net/captcha.js";
-    script.defer = true;
-    document.body.appendChild(script);
+    setWeek(getWeekRange());
   }, []);
   return (
     <div
@@ -311,7 +338,7 @@ const Calculator = () => {
               href="#"
               className="block font-montserrat text-orange lg:text-lg leading-4 font-bold mb-2"
             >
-              Зафиксируем цены со скидкой с 21.11.2025 до 28.11.2025
+              Зафиксируем цены со скидкой с {week.start} до {week.end}
             </a>
             <img
               src="https://static.tildacdn.com/tild3736-3636-4338-b630-616138376662/solar_stars-line-duo.svg"

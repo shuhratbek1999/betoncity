@@ -52,7 +52,7 @@ const LaboratoryTesting = () => {
       <h1 className="text-3xl lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Лабораторные испытания продукции
       </h1>
-      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-10 mt-4">
+      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-16 mt-4">
         Наука за каждым кубическим метром - исследования и бетон высочайшего
         качества
       </h4>

@@ -78,7 +78,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 3000); // 3 sekund
+    }, 6000); // 3 sekund
 
     return () => clearTimeout(timer);
   }, []);
@@ -203,27 +203,27 @@ function App() {
               src="https://static.tildacdn.com/tild6666-6136-4632-b664-386636376664/image_10png.webp"
               alt="logo img"
             />
-            <h1 className="font-bold text-3xl font-montserrat my-3">
+            <h1 className="font-bold text-xl sm:text-3xl font-montserrat my-3">
               Сложный выбор?
             </h1>
-            <div className="my-2 text-xl font-normal font-montserrat">
+            <div className="my-2 text-18 sm:text-xl font-normal font-montserrat">
               Мы поможем! <br />
               Для вас <strong>ПРОМОКОД</strong>
             </div>
-            <Button className="w-full h-76 bg-gray-200 text-orange font-semibold text-xl sm:text-3xl rounded-10">
+            <Button className="w-full h-76 bg-gray-200 text-orange font-semibold text-18 sm:text-3xl rounded-10">
               БEТОНСИТИСТРОЙ2025
             </Button>
             <div className="flex items-center justify-between w-full my-4">
               <p className="text-sm sm:text-xl font-normal font-montserrat">
                 назовите его оператору <br /> и зафиксируйте скидку
               </p>
-              <h1 className="text-5xl text-orange font-bold font-montserrat">
+              <h1 className="text-3xl sm:text-5xl text-orange font-bold font-montserrat">
                 10%
               </h1>
             </div>
             <div className="form-phone flex flex-col">
               <PhoneNumberInput
-                className="h-76 w-full rounded-10"
+                className="h-14 sm:h-76 w-full rounded-10"
                 value={phone}
                 onChange={setPhone}
                 setError={setError}
@@ -239,11 +239,11 @@ function App() {
                 </span>
               </label>
             </div>
-            <Button className="h-76 w-270 my-4 bg-orange text-white px-[15px] rounded-10 font-space-grotesk text-base">
+            <Button className="h-14 sm:h-76 w-270 my-4 bg-orange text-white px-[15px] rounded-10 font-space-grotesk text-base">
               Заказать
             </Button>
             <div className="footer">
-              <p>
+              <p className="text-sm sm:text-18">
                 Для оптовых покупателей у нас <br /> есть особое предложение
               </p>
               {/* <img src="" alt="" /> */}

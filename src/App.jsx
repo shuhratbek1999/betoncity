@@ -76,12 +76,109 @@ function App() {
     />,
   ];
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(true);
-    }, 6000); // 3 sekund
+    const DELAY_INACTIVITY = 10000;
+    let timer;
+    let popupShown = false;
 
-    return () => clearTimeout(timer);
+    const isTargetDone = () => localStorage.getItem("targetDone") === "true";
+
+    const markTargetAsDone = (source) => {
+      console.log("TARGET DONE:", source);
+      localStorage.setItem("targetDone", "true");
+
+      popupShown = true;
+      setShow(false);
+
+      clearTimeout(timer);
+
+      // remove all listeners
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+      document.removeEventListener("mouseout", mouseOutHandler);
+      events.forEach((e) => window.removeEventListener(e, resetTimer));
+    };
+
+    const events = ["mousemove", "keydown", "scroll", "touchstart"];
+
+    // 1) 10 second inactivity
+    const resetTimer = () => {
+      if (isTargetDone()) return;
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        if (!popupShown) {
+          popupShown = true;
+          console.log("🟧 INACTIVITY POPUP");
+          setShow(true);
+        }
+      }, DELAY_INACTIVITY);
+    };
+
+    // 2) EXIT INTENT
+    const mouseOutHandler = (e) => {
+      if (isTargetDone() || popupShown) return;
+
+      if (e.clientY <= 0) {
+        popupShown = true;
+        console.log("🟥 EXIT POPUP");
+        setShow(true);
+      }
+    };
+
+    // 3) BACK (before unload)
+    const beforeUnloadHandler = (e) => {
+      if (isTargetDone() || popupShown) return;
+
+      popupShown = true;
+      console.log("🟦 BACK POPUP");
+      setShow(true);
+
+      e.preventDefault();
+      e.returnValue = "";
+    };
+
+    // 4) Target actions (Telegram / WhatsApp / Phone / Form)
+    const addTargetListeners = () => {
+      document
+        .querySelectorAll('a[href*="t.me"]')
+        .forEach((el) =>
+          el.addEventListener("click", () => markTargetAsDone("Telegram"))
+        );
+
+      document
+        .querySelectorAll('a[href*="wa.me"]')
+        .forEach((el) =>
+          el.addEventListener("click", () => markTargetAsDone("WhatsApp"))
+        );
+
+      document
+        .querySelectorAll('a[href^="tel:"]')
+        .forEach((el) =>
+          el.addEventListener("click", () => markTargetAsDone("Phone"))
+        );
+
+      document.addEventListener("form_submitted", () =>
+        markTargetAsDone("Form Sent")
+      );
+    };
+
+    // === INIT ===
+    if (!isTargetDone()) {
+      events.forEach((e) => window.addEventListener(e, resetTimer));
+      document.addEventListener("mouseout", mouseOutHandler);
+      window.addEventListener("beforeunload", beforeUnloadHandler);
+      resetTimer();
+      addTargetListeners();
+    }
+
+    // === CLEANUP ===
+    return () => {
+      events.forEach((e) => window.removeEventListener(e, resetTimer));
+      document.removeEventListener("mouseout", mouseOutHandler);
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+      clearTimeout(timer);
+    };
   }, []);
+
   return (
     <>
       <Header />
@@ -90,7 +187,7 @@ function App() {
         <Calculator />
         <Experience />
         <div
-          className="img h-60 sm:h-435 w-full"
+          className="img h-200 xl:h-96 2xl:h-435 w-full -mt-20"
           style={{
             backgroundImage: `url('https://static.tildacdn.com/tild3863-6634-4531-a364-363333646230/_846.svg')`,
             backgroundSize: "cover",
@@ -109,12 +206,18 @@ function App() {
         </div>
         <Carousel slides={images} interval={3000} />
         <Sertifikat />
-        <div className="img lg:h-435 w-full lg:mb-20 overflow-hidden">
-          <img
+        <div
+          className="img h-[230px] lg:h-96 2xl:h-550 -mt-5 w-full overflow-hidden bg-center object-cover bg-no-repeat bg-cover"
+          style={{
+            backgroundImage:
+              "url('https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg')",
+          }}
+        >
+          {/* <img
             src="https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg"
-            className="w-full object-contain"
+            className="w-full object-cover"
             alt=""
-          />
+          /> */}
         </div>
         <Info />
         <CalculationBiton />
@@ -197,7 +300,7 @@ function App() {
               className="object-cover w-full"
             />
           </div>
-          <div className="form w-full lg:w-1/2 px-4">
+          <div className="form w-full lg:w-1/2 p-4">
             <img
               className="w-1/2"
               src="https://static.tildacdn.com/tild6666-6136-4632-b664-386636376664/image_10png.webp"
@@ -248,26 +351,6 @@ function App() {
               </p>
               {/* <img src="" alt="" /> */}
             </div>
-          </div>
-          <div
-            onClick={() => setShow(false)}
-            className="svg absolute top-0 right-2 cursor-pointer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#ef9c1c"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              onClick={() => setOpen(false)}
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
           </div>
         </div>
       </Modal>

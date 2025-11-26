@@ -208,7 +208,7 @@ const Calculator = () => {
         className={`${
           btn == "6"
             ? ""
-            : "rounded-xl bg-white border-transparent shadow-[14px_12px_17px_12px_#004c981a]"
+            : "rounded-xl bg-white border-transparent shadow-[14px_12px_17px_0px_#004c981a]"
         } calculator_section relative w-full min-h-298 p-4`}
       >
         <div

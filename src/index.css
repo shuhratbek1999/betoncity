@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
-@import "tailwindcss";
 /* * {
   outline: 1px solid blue;
 } */
@@ -213,3 +212,5 @@
     background: #ef9c1c !important;
   }
 }
+
+@import "tailwindcss";

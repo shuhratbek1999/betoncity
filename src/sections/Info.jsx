@@ -35,7 +35,7 @@ const Info = () => {
     },
   ];
   return (
-    <div className="container-base">
+    <div className="container-base -mt-28">
       <div className="info flex flex-col sm:items-center gap-2 sm:gap-16 h-auto">
         {informations.map((item, index) => (
           <div

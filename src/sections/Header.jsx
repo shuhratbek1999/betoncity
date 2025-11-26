@@ -175,6 +175,7 @@ export default function Header() {
             <div className="flex items-center gap-1">
               <a
                 href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                target="_blank"
                 className="shrink-0"
               >
                 <img
@@ -184,7 +185,11 @@ export default function Header() {
                 />
               </a>
 
-              <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
+              <a
+                href="https://t.me/betoncitystroy_bot"
+                target="_blank"
+                className="shrink-0"
+              >
                 <img
                   className="size-10"
                   src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -193,6 +198,7 @@ export default function Header() {
               </a>
             </div>
             <a
+              target="_blank"
               href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
               className="shrink-0 lg:flex gl:flex hidden"
             >
@@ -249,6 +255,7 @@ export default function Header() {
               <div className="items-center gap-1 hidden lg:flex">
                 <a
                   href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   className="shrink-0"
                 >
                   <img
@@ -258,7 +265,11 @@ export default function Header() {
                   />
                 </a>
 
-                <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
+                <a
+                  href="https://t.me/betoncitystroy_bot"
+                  target="_blank"
+                  className="shrink-0"
+                >
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -267,6 +278,7 @@ export default function Header() {
                 </a>
               </div>
               <a
+                target="_blank"
                 href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
                 className="shrink-0 lg:flex hidden"
               >
@@ -346,6 +358,7 @@ export default function Header() {
               <div className="flex items-center gap-1">
                 <a
                   href="https://api.whatsapp.com/send/?phone=%2B79165266199&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   className="shrink-0"
                 >
                   <img
@@ -355,7 +368,11 @@ export default function Header() {
                   />
                 </a>
 
-                <a href="https://t.me/betoncitystroy_bot" className="shrink-0">
+                <a
+                  href="https://t.me/betoncitystroy_bot"
+                  target="_blank"
+                  className="shrink-0"
+                >
                   <img
                     className="size-10"
                     src="https://optim.tildacdn.com/tild3139-3161-4264-b338-346265613135/-/cover/48x48/center/center/-/format/webp/logos_telegram.png.webp"
@@ -365,6 +382,7 @@ export default function Header() {
               </div>
             </div>
             <a
+              target="_blank"
               href="https://yandex.uz/maps/org/betoncitystroy/157757101043/reviews/?ll=37.547665%2C55.881985&utm_campaign=v1&utm_medium=rating&utm_source=badge&z=16"
               className="shrink-0 flex w-10/12"
             >

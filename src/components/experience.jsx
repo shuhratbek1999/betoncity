@@ -30,7 +30,7 @@ const Experience = () => {
   ];
   return (
     <div className="container-base my-20">
-      <h4 className="text-orange font-bold font-montserrat text-18 text-center">
+      <h4 className="text-orange font-bold font-montserrat text-18 text-center my-6">
         БЕТОНСИТИСТРОЙ
       </h4>
       <h1 className="text-secondary lg:text-5xl font-bold text-center">
@@ -38,16 +38,7 @@ const Experience = () => {
       </h1>
 
       <nav className="my-12">
-        <ul
-          className="
-      grid 
-      grid-cols-2            /* mobile: 2 ustun */
-      gap-y-10 gap-x-4       
-      sm:grid-cols-3         /* tablet: 3 ustun */
-      lg:grid-cols-5         /* desktop: 5 ustun */
-      place-items-center
-    "
-        >
+        <ul className="grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 place-items-center">
           {experiences.map((ex, i) => (
             <li
               key={ex.id}
@@ -60,7 +51,7 @@ const Experience = () => {
                 src={ex.img}
                 alt={ex.title}
               />
-              <h4 className="text-center max-sm:w-10/12 text-sm leading-5 sm:text-18 sm:leading-4 font-bold font-space-grotesk text-gray-soft">
+              <h4 className="text-center max-sm:w-10/12 text-sm leading-5 sm:text-18 sm:leading-[18px] font-bold font-space-grotesk text-gray-soft">
                 {ex.title}
               </h4>
             </li>

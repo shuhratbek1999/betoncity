@@ -12,16 +12,16 @@ const Equipment = () => {
     {
       id: 2,
       name: "Самосвалы",
-      img: "https://static.tildacdn.com/tild3062-3463-4464-b232-373761386238/fa92679c-347e-440a-9.png",
       free: 1,
-      space: "5/7/8/9/10/12м3",
+      img: "https://static.tildacdn.com/tild3062-3463-4464-b232-373761386238/fa92679c-347e-440a-9.png",
+      space: "10/20м3",
     },
     {
       id: 3,
       name: "Бетононасос стреловой",
       img: "https://static.tildacdn.com/tild6663-6261-4361-b931-353930666436/493577d0-65c1-4d5b-8.png",
-      space: "5/7/8/9/10/12м3",
       arrow_length: "18/24/28/36/52м",
+      desc: "Прокачиваем бетон с фиброй",
     },
   ];
   return (
@@ -62,7 +62,11 @@ const Equipment = () => {
               <h2 className="text-18 font-bold font-space-grotesk text-secondary mb-3">
                 {ex.name}
               </h2>
-              <div className="extra my-1.5 flex justify-between items-center">
+              <div
+                className={`${
+                  ex.free ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Бесплатная выгрузка:
                 </h6>
@@ -70,7 +74,20 @@ const Equipment = () => {
                   {ex.free}ч.
                 </p>
               </div>
-              <div className="extra my-1.5 flex justify-between items-center">
+              <div
+                className={`${
+                  ex.desc ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
+                <p className="text-gray-soft font-space-grotesk text-base">
+                  {ex.desc}
+                </p>
+              </div>
+              <div
+                className={`${
+                  ex.space ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Объем:
                 </h6>
@@ -78,15 +95,35 @@ const Equipment = () => {
                   {ex.space}
                 </p>
               </div>
-              <div className="extra my-1.5 flex justify-between items-center">
+              <div
+                className={`${
+                  ex.tray_length ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Длина лотка:
+                </h6>
+                <p className="text-secondary font-space-grotesk text-sm font-bold">
+                  {ex.tray_length}
+                </p>
+              </div>
+              <div
+                className={`${
+                  ex.arrow_length ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
+                <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
+                  Длинна стрелы:
                 </h6>
                 <p className="text-secondary font-space-grotesk text-sm font-bold">
                   {ex.arrow_length}
                 </p>
               </div>
-              <div className="extra my-1.5 flex justify-between items-center">
+              <div
+                className={`${
+                  ex.feed_head ? "flex" : "hidden"
+                } extra my-1.5 justify-between items-center`}
+              >
                 <h6 className="text-gray-soft text-sm font-space-grotesk font-normal">
                   Высота подачи:
                 </h6>

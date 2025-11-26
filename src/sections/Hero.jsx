@@ -56,7 +56,7 @@ export default function Hero() {
         <div className="absolute md:hidden top-0 left-0 z-10 w-full h-2/3 bg-linear-to-b from-[#fcfcfd] to-transparent pointer-events-none"></div>
         <div className="z-30 absolute bottom-[18%] md:bottom-[10%] xl:bottom-[12%] left-[45%]">
           <div className="relative max-sm:w-85 max-sm:h-85 sm:w-135 sm:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/50 rounded-full"></div>
+            <div className="absolute inset-0 bg-black/50 rounded-full z-0"></div>
             <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">
               <div className="absolute inset-0 bg-gray-100/20 rounded-full"></div>
               <a href="#calculator">
@@ -78,7 +78,7 @@ export default function Hero() {
             </div>
             <svg
               viewBox="0 0 200 200"
-              className="absolute w-full h-full animate-rotate-circle"
+              className="absolute w-full h-full animate-rotate-circle z-20"
             >
               <defs>
                 <path
@@ -90,7 +90,7 @@ export default function Hero() {
               <text fill="white" fontSize="16" letterSpacing="2.5">
                 <textPath
                   href="#circlePath"
-                  className="text-white font-space-grotesk text-xl"
+                  className="text-white text-xl font-roman capitalize p-1"
                 >
                   Рассчитать стоимость Рассчитать стоимость Рассчитать стоимость
                 </textPath>

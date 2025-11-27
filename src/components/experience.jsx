@@ -29,7 +29,7 @@ const Experience = () => {
     },
   ];
   return (
-    <div className="container-base my-20">
+    <div className="container-base mt-20">
       <h4 className="text-orange font-bold font-montserrat text-18 text-center my-6">
         БЕТОНСИТИСТРОЙ
       </h4>

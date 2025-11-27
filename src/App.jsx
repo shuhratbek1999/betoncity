@@ -187,7 +187,7 @@ function App() {
         <Calculator />
         <Experience />
         <div
-          className="img h-[230px] lg:h-96 2xl:h-550 -mt-5 w-full overflow-hidden bg-center object-cover bg-no-repeat bg-cover"
+          className="img h-[230px] lg:h-96 2xl:h-550 -mt-20 w-full overflow-hidden bg-center object-cover bg-no-repeat bg-cover"
           style={{
             backgroundImage:
               "url('https://static.tildacdn.com/tild3863-6634-4531-a364-363333646230/_846.svg')",

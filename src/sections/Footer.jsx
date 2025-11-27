@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#272727]">
       <div className="content container-base">
-        <div className="footer-top pt-28 pb-10">
+        <div className="footer-top pt-5 pb-10">
           <nav className="w-full flex justify-center">
             <ul className="flex flex-wrap w-full md:w-10/12 justify-center gap-x-8 gap-y-0">
               {links.map((l) => (

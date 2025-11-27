@@ -182,16 +182,15 @@ function App() {
   return (
     <>
       <Header />
-      <main className="bg-[#f6f6f6]">
+      <main className="bg-[#f6f6f6] overflow-hidden">
         <Hero />
         <Calculator />
         <Experience />
         <div
-          className="img h-200 xl:h-96 2xl:h-435 w-full -mt-20"
+          className="img h-[230px] lg:h-96 2xl:h-550 -mt-5 w-full overflow-hidden bg-center object-cover bg-no-repeat bg-cover"
           style={{
-            backgroundImage: `url('https://static.tildacdn.com/tild3863-6634-4531-a364-363333646230/_846.svg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundImage:
+              "url('https://static.tildacdn.com/tild3863-6634-4531-a364-363333646230/_846.svg')",
           }}
         ></div>
         <Prices />
@@ -212,13 +211,7 @@ function App() {
             backgroundImage:
               "url('https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg')",
           }}
-        >
-          {/* <img
-            src="https://static.tildacdn.com/tild6364-3039-4438-b862-363963336234/Frame_2444.svg"
-            className="w-full object-cover"
-            alt=""
-          /> */}
-        </div>
+        ></div>
         <Info />
         <CalculationBiton />
         <div className="container-base my-10">

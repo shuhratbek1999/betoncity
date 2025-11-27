@@ -197,11 +197,13 @@ const Calculator = () => {
   }, []);
   return (
     <div
-      className="container-base p-4 my-20 text-18 font-montserrat"
+      className="container-base p-4 -mt-24 lg:mt-20 text-18 font-montserrat"
       id="calculator"
     >
-      <h6 className="font-bold text-orange text-center">КАЛЬКУЛЯТОР</h6>
-      <h1 className="text-secondary font-bold font-space-grotesk my-8 lg:text-5xl text-center">
+      <h6 className="font-bold text-orange text-center hidden lg:block">
+        КАЛЬКУЛЯТОР
+      </h6>
+      <h1 className="text-secondary text-32 font-bold font-space-grotesk my-8 lg:text-5xl text-center">
         Узнайте точную стоимость онлайн
       </h1>
       <div
@@ -414,7 +416,11 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        className="px-[45px] py-10"
+      >
         <div className="content">
           <h1 className="text-center font-arial text-xl text-[#222222] font-light pb-5">
             Поставьте галочку, кликнув на квадратик, чтобы мы знали, что вы не

@@ -376,7 +376,11 @@ const Prices = () => {
           {textes}
         </Button>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        className="px-[45px] py-10"
+      >
         <div className="container flex flex-col gap-4">
           <h1 className="lg:text-4xl text-secondary font-semibold mb-2.5 font-space-grotesk">
             Оставить заявку

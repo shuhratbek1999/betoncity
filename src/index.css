@@ -167,7 +167,10 @@
       transform: translateY(5px);
     }
   }
-
+  svg {
+    shape-rendering: geometricPrecision;
+    image-rendering: crisp-edges;
+  }
   .animate-bounce-y {
     animation: bounce-y 1.6s ease-in-out infinite;
   }
@@ -175,7 +178,18 @@
 @utility container-base {
   @apply w-full max-w-235 xl:max-w-340 mx-auto px-5;
 }
+@layer utilities {
+  .text-sharp svg text {
+    text-rendering: geometricPrecision;
+    shape-rendering: geometricPrecision;
+    -webkit-text-size-adjust: 100%;
+  }
 
+  .text-sharp svg {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
 @utility hover-primary {
   @apply transition duration-300 hover:bg-primary/80;
 }
@@ -211,6 +225,14 @@
     height: 13px !important;
     background: #ef9c1c !important;
   }
+}
+.circle-text {
+  fill: white;
+  font-size: 21px; /* 16px emas — aynan 14px tiniq chiqadi */
+  word-spacing: 2px;
+  font-family: "Arial";
+  text-rendering: geometricPrecision;
+  text-transform: capitalize;
 }
 
 @import "tailwindcss";

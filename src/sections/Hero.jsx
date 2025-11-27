@@ -55,30 +55,33 @@ export default function Hero() {
         />
         <div className="absolute md:hidden top-0 left-0 z-10 w-full h-2/3 bg-linear-to-b from-[#fcfcfd] to-transparent pointer-events-none"></div>
         <div className="z-30 absolute bottom-[18%] md:bottom-[10%] xl:bottom-[12%] left-[45%]">
-          <div className="relative max-sm:w-85 max-sm:h-85 sm:w-135 sm:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
+          <div className="relative pointer-events-none max-sm:w-85 max-sm:h-85 sm:w-135 sm:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
             <div className="absolute inset-0 bg-black/50 rounded-full z-0"></div>
-            <div className="absolute cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gray-100/20 rounded-full"></div>
+            <div className="absolute text-sharp cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-40 flex items-center justify-center">
+              <div className="absolute z-40 inset-0 bg-gray-100/20 rounded-full"></div>
               <a href="#calculator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="#f6ae3f"
-                  className="size-6 md:size-10 animate-bounce-y opacity-100"
+                  strokeWidth="2.5"
+                  stroke="#ef9c1c"
+                  className="w-7 h-7 md:w-10 md:h-10 animate-bounce-y"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+                    d="
+      M4.5 6.25 12 13.75 19.5 6.25 
+      M4.5 14.25 12 21.75 19.5 14.25
+    "
                   />
                 </svg>
               </a>
             </div>
             <svg
               viewBox="0 0 200 200"
-              className="absolute w-full h-full animate-rotate-circle z-20"
+              className="absolute text-sharp w-full h-full animate-rotate-circle z-20"
             >
               <defs>
                 <path
@@ -87,12 +90,9 @@ export default function Hero() {
                 />
               </defs>
 
-              <text fill="white" fontSize="16" letterSpacing="2.5">
-                <textPath
-                  href="#circlePath"
-                  className="text-white text-xl font-roman capitalize p-1"
-                >
-                  Рассчитать стоимость Рассчитать стоимость Рассчитать стоимость
+              <text className="circle-text">
+                <textPath href="#circlePath">
+                  Рассчитать стоимость Рассчитать стоимость
                 </textPath>
               </text>
             </svg>
@@ -152,7 +152,11 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        className="px-[45px] py-10"
+      >
         <div className="content">
           <h1 className="text-center font-arial text-xl text-[#222222] font-light pb-5">
             Поставьте галочку, кликнув на квадратик, чтобы мы знали, что вы не

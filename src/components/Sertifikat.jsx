@@ -70,7 +70,11 @@ const Sertifikat = () => {
           Получить расчет стоимости
         </Button>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        className="px-[45px] py-10"
+      >
         <div
           className={`${!opens ? "flex" : "hidden"} container flex-col gap-4`}
         >

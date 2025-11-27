@@ -94,7 +94,11 @@ const Plant = () => {
           src="https://static.tildacdn.com/tild6430-6233-4662-a133-383530376361/Layer_1_5.png"
           alt="images"
         />
-        <Modal open={open} onClose={() => setOpen(false)}>
+        <Modal
+          open={open}
+          onClose={() => setOpen(false)}
+          className="px-[45px] py-10"
+        >
           <div className="content">
             <h1 className="text-center font-arial text-xl text-[#222222] font-light pb-5">
               Поставьте галочку, кликнув на квадратик, чтобы мы знали, что вы не

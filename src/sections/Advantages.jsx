@@ -43,7 +43,7 @@ const Advantages = () => {
       <h1 className="text-center font-space-grotesk text-32 lg:text-5xl text-secondary font-bold">
         Преимущества
       </h1>
-      <div className=" my-6 flex flex-col md:flex-row">
+      <div className=" my-6 flex flex-col md:flex-row justify-center">
         <h1 className="whitespace-nowrap text-center text-xl md:text-22 font-montserrat font-normal text-gray-soft">
           {" "}
           Смотрите чем мы отличаемся от

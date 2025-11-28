@@ -381,7 +381,7 @@ const Prices = () => {
           </Button>
         ))}
       </div>
-      <div className="prices_list flex flex-wrap justify-center items-center jusc my-10">
+      <div className="prices_list flex flex-wrap justify-center md:justify-between items-center my-10">
         {prices.map((p) => (
           <div
             key={p.id}

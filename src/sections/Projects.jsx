@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -76,14 +76,24 @@ const Projects = () => {
       img: "https://static.tildacdn.com/tild3161-3565-4931-b436-353333323731/noroot.png",
     },
   ];
-
+  useEffect(() => {
+    // prevRef va nextRef render bo‘lganidan keyin Swiper navigation ni init qilamiz
+    if (prevRef.current && nextRef.current) {
+      swiperInstance.navigation.destroy(); // eski navigation bo‘lsa
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, []);
+  let swiperInstance;
   return (
-    <div className="container-base my-20" id="Проекты">
+    <div className="container-base my-20 h-auto relative" id="Проекты">
       {/* Custom Prev Button */}
       <h1 className="text-32 lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Наши проекты
       </h1>
-      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal my-8">
+      <h4 className="text-xl md:text-22 text-center font-space-grotesk text-gray-soft font-normal my-4 md:my-8">
         Гордимся реальными работами: Смотрите, что мы создали!
       </h4>
 
@@ -92,20 +102,15 @@ const Projects = () => {
         loop={true}
         autoplay={{ delay: 3000 }}
         spaceBetween={20}
-        navigation={false}
-        onInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-          swiper.navigation.init();
-          swiper.navigation.update();
-        }}
+        onSwiper={(swiper) => (swiperInstance = swiper)}
+        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
         breakpoints={{
           0: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
           1400: { slidesPerView: 4 },
         }}
-        className="relative"
+        className="relative overflow-visible py-10"
       >
         {projects.map((item) => (
           <SwiperSlide key={item.id}>
@@ -145,39 +150,39 @@ const Projects = () => {
             </div>
           </SwiperSlide>
         ))}
-        <button
-          ref={prevRef}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24">
-            <path
-              d="M15 4L7 12L15 20"
-              stroke="#000"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-
-        {/* Custom Next Button */}
-        <button
-          ref={nextRef}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24">
-            <path
-              d="M9 4L17 12L9 20"
-              stroke="#000"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
       </Swiper>
+      <button
+        ref={prevRef}
+        className="absolute z-30 left-4 max-md:-bottom-10 lg:top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24">
+          <path
+            d="M15 4L7 12L15 20"
+            stroke="#808080"
+            strokeWidth="1"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {/* Custom Next Button */}
+      <button
+        ref={nextRef}
+        className="absolute right-4 max-md:-bottom-10 lg:top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100"
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24">
+          <path
+            d="M9 4L17 12L9 20"
+            stroke="#808080"
+            strokeWidth="1"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
     </div>
   );
 };

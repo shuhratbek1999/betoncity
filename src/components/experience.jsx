@@ -29,34 +29,59 @@ const Experience = () => {
     },
   ];
   return (
-    <div className="container-base mt-20">
-      <h4 className="text-orange font-bold font-montserrat text-18 text-center my-6">
+    <div className="mt-20">
+      <h4 className="text-orange font-bold font-montserrat text-[15px] md:text-18 text-center my-6">
         БЕТОНСИТИСТРОЙ
       </h4>
-      <h1 className="text-secondary lg:text-5xl font-bold text-center">
+      <h1 className="text-secondary text-xl whitespace-nowrap lg:text-5xl font-bold md:text-center">
         Надежный партнер с большим опытом
       </h1>
 
       <nav className="my-12">
-        <ul className="grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 place-items-center">
-          {experiences.map((ex, i) => (
-            <li
-              key={ex.id}
-              className={`${
-                i === 2 ? "col-span-2 sm:col-span-1" : ""
-              } flex flex-col items-center`}
-            >
+        {/* Mobil uchun qatlamlar */}
+        <div className="grid grid-cols-2 w-full gap-6 sm:grid-cols-5 sm:gap-6 place-items-center">
+          {/* 1-qator */}
+          {experiences.slice(0, 2).map((ex) => (
+            <div key={ex.id} className="flex flex-col items-center">
               <img
-                className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-6 object-contain"
+                className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-2 md:mb-6 object-contain"
                 src={ex.img}
                 alt={ex.title}
               />
-              <h4 className="text-center max-sm:w-10/12 text-sm leading-5 sm:text-18 sm:leading-[18px] font-bold font-space-grotesk text-gray-soft">
+              <h4 className="text-center w-full text-sm leading-5 sm:text-18 sm:leading-[18px] font-bold font-space-grotesk text-gray-soft">
                 {ex.title}
               </h4>
-            </li>
+            </div>
           ))}
-        </ul>
+
+          {/* 2-qator: 4-chi element markazda */}
+          <div className="col-span-2 flex justify-center sm:col-span-1">
+            <div className="flex flex-col items-center">
+              <img
+                className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-2 md:mb-6 object-contain"
+                src={experiences[3].img}
+                alt={experiences[3].title}
+              />
+              <h4 className="text-center max-w-[90%] text-sm leading-5 sm:text-18 sm:leading-[18px] font-bold font-space-grotesk text-gray-soft">
+                {experiences[3].title}
+              </h4>
+            </div>
+          </div>
+
+          {/* 3-qator: 3 va 5 elementlar */}
+          {[experiences[2], experiences[4]].map((ex) => (
+            <div key={ex.id} className="flex flex-col items-center">
+              <img
+                className="w-[74px] h-[74px] sm:w-90 sm:h-90 mb-2 md:mb-6 object-contain"
+                src={ex.img}
+                alt={ex.title}
+              />
+              <h4 className="text-center w-full text-sm leading-5 sm:text-18 sm:leading-[18px] font-bold font-space-grotesk text-gray-soft">
+                {ex.title}
+              </h4>
+            </div>
+          ))}
+        </div>
       </nav>
     </div>
   );

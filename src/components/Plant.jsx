@@ -44,13 +44,13 @@ const Plant = () => {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="bg-[#fafafa] min-h-306 my-32">
+    <div className="bg-[#fafafa] min-h-306 mt-32 mb-10">
       <div className="container-base main flex flex-col-reverse items-center lg:flex-row lg:justify-between">
         <div className="content">
-          <h1 className="xl:text-5xl text-32 mt-4 max-sm:leading-8 text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
+          <h1 className="xl:text-5xl text-32 mt-8 md:mt-4 max-sm:leading-8 text-center sm:text-left font-bold font-space-grotesk text-secondary lg:mt-0">
             Проведем экскурсию по заводу
           </h1>
-          <h4 className="font-space-grotesk  text-center sm:text-left font-normal text-2xl text-gray-soft my-4">
+          <h4 className="font-space-grotesk wrap-break-word text-center sm:text-left font-normal text-2xl text-gray-soft my-4">
             а так же ответим на все вопросы которые могли <br /> у вас
             возникнуть
           </h4>
@@ -75,12 +75,12 @@ const Plant = () => {
             </Button>
           </div>
           <div className="checked ml-1 ">
-            <label className="inline-flex items-center gap-3 cursor-pointer">
+            <label className="inline-flex items-center gap-2 cursor-pointer">
               <FancyCheckbox
                 checked={someState}
                 onChange={(v) => setSomeState(v)}
               />
-              <span className="inline-block text-sm text-black font-arial">
+              <span className="inline-block text-[12px] md:text-sm text-black font-arial">
                 Даю согласие на обработку своих персональных данных
               </span>
             </label>
@@ -90,7 +90,7 @@ const Plant = () => {
           </div>
         </div>
         <img
-          className=" object-contain md:w-500 md:h-298"
+          className=" object-contain md:w-500 md:h-298 -mt-8 scale-106 md:scale-100 md:mt-0"
           src="https://static.tildacdn.com/tild6430-6233-4662-a133-383530376361/Layer_1_5.png"
           alt="images"
         />

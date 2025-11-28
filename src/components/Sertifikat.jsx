@@ -30,7 +30,7 @@ const Sertifikat = () => {
     setOpen(true);
   };
   return (
-    <div className="container-base flex flex-col md:items-center xl:flex-row mt-20 gap-10">
+    <div className="container-base flex flex-col md:items-center xl:flex-row mt-20 md:gap-10 max-ss:scale-x-90">
       <div className="video w-full md:w-10/12 lg:w-full xl:w-1/2 h-[370px] border-[3px] border-orange rounded-10 relative">
         <iframe
           className="w-full h-full absolute -top-3 left-3 rounded-10"
@@ -46,20 +46,20 @@ const Sertifikat = () => {
           alt=""
           className="w-16 h-16 object-contain"
         />
-        <h1 className="text-2xl text-secondary font-space-grotesk font-bold">
+        <h1 className="text-2xl text-secondary font-space-grotesk font-bold leading-[31px] text-size-adjust">
           Наш товар сертифицирован и соответствует международным стандартам и
           ГОСТ.
         </h1>
-        <p className="text-base font-normal font-space-grotesk text-secondary my-4">
+        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-[110%] md:w-full">
           Наша компания более 5 лет производит качественный бетон по доступным
           ценам.
         </p>
-        <p className="text-base font-normal font-space-grotesk text-secondary my-4">
+        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-[110%] md:w-full">
           Он полностью экологичен и безопасен, вы можете использовать его не
           только промышленных зданиях, но и в частных домах, не боясь за свое
           здоровье.
         </p>
-        <p className="text-base font-normal font-space-grotesk text-secondary my-4">
+        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-[110%] md:w-full">
           За время работы мы выстроили наш производственный процесс так, чтобы
           удовлетворять как розничные, так и оптовые потребности наших клиентов.
         </p>

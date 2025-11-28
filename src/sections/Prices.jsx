@@ -14,6 +14,15 @@ const Prices = () => {
       { id: 6, name: "Керамзитобетон" },
       { id: 7, name: "Цементно-песчанная смесь" },
     ],
+    servicesMobil = [
+      { id: 1, name: "гравий" },
+      { id: 2, name: "гранит" },
+      { id: 3, name: "Растворы" },
+      { id: 4, name: "Растворы" },
+      { id: 5, name: "Пескобетон" },
+      { id: 6, name: "Керамзитобетон" },
+      { id: 7, name: "Цементно-песчанная смесь" },
+    ],
     pricesList = [
       {
         id: 1,
@@ -275,9 +284,8 @@ const Prices = () => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const [textes, setText] = useState("Заказать бетон на гравийном щебне");
-  const getTextBtn = (key) => {
-    console.log(key);
 
+  const getTextBtn = (key) => {
     switch (key) {
       case 1:
         setText("Заказать бетон на гравийном щебне");
@@ -303,6 +311,11 @@ const Prices = () => {
     }
   };
   const clickServices = (id) => {
+    setServices(pricesList.filter((item) => item.services_id == id));
+    setService(id);
+    getTextBtn(id);
+  };
+  const clickServicesMobil = (id) => {
     setServices(pricesList.filter((item) => item.services_id == id));
     setService(id);
     getTextBtn(id);
@@ -338,7 +351,22 @@ const Prices = () => {
       <h1 className="lg:text-5xl font-bold font-space-grotesk text-center">
         Цены на бетон в Москве и МО
       </h1>
-      <div className="buttons flex items-center gap-4 my-6 max-xl:overflow-x-scroll no-scrollbar">
+      <div className="buttons  flex md:hidden items-center gap-4 my-6 max-xl:overflow-x-scroll no-scrollbar">
+        {servicesMobil.map((s) => (
+          <Button
+            key={s.id}
+            onClick={() => clickServicesMobil(s.id)}
+            className={`${
+              servicesId == s.id
+                ? "bg-orange text-white"
+                : "bg-white text-black"
+            } rounded-xl whitespace-nowrap px-6 transition-all delay-200 ease-in-out text-base font-space-grotesk font-normal border border-price-btn hover:bg-orange hover:text-white hover:border-orange`}
+          >
+            {s.name}
+          </Button>
+        ))}
+      </div>
+      <div className="buttons hidden md:flex items-center gap-4 my-6 max-xl:overflow-x-scroll no-scrollbar">
         {services.map((s) => (
           <Button
             key={s.id}
@@ -353,16 +381,16 @@ const Prices = () => {
           </Button>
         ))}
       </div>
-      <div className="prices_list flex flex-wrap justify-between items-start my-10">
+      <div className="prices_list flex flex-wrap justify-center items-center jusc my-10">
         {prices.map((p) => (
           <div
             key={p.id}
-            className="w-full md:w-[48%] flex justify-between border-b pb-2.5 border-gray-300 mt-7"
+            className="w-11/12 md:w-[48%] flex justify-between border-b pb-2.5 border-gray-300 mt-7"
           >
-            <h4 className="font-space-grotesk font-semibold uppercase lg:text-[18px] text-secondary">
+            <h4 className="font-space-grotesk font-semibold uppercase lg:etext-18 text-secondary">
               {p.name}
             </h4>
-            <span className="font-space-grotesk font-semibold uppercase lg:text-[18px] text-secondary">
+            <span className="font-space-grotesk font-semibold uppercase lg:etext-18 text-secondary">
               {p.price}₽
             </span>
           </div>

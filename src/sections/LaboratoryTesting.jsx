@@ -52,7 +52,7 @@ const LaboratoryTesting = () => {
       <h1 className="text-3xl lg:text-5xl text-center font-space-grotesk text-secondary font-bold">
         Лабораторные испытания продукции
       </h1>
-      <h4 className="text-22 text-center font-space-grotesk text-gray-soft font-normal mb-16 mt-4">
+      <h4 className="text-xl md:text-22 text-center font-space-grotesk text-gray-soft font-normal mb-6 md:mb-16 mt-4">
         Наука за каждым кубическим метром - исследования и бетон высочайшего
         качества
       </h4>
@@ -86,7 +86,7 @@ const LaboratoryTesting = () => {
         ))}
       </div>
       <nav className="my-12 w-full flex justify-center">
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-2 lg:gap-x-6">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-2 lg:gap-x-6">
           {experiences.map((ex) => (
             <li key={ex.id} className="">
               <a href="#" className="flex flex-col items-center justify-center">
@@ -95,7 +95,7 @@ const LaboratoryTesting = () => {
                   src={ex.img}
                   alt={ex.title}
                 />
-                <h4 className="text-center w-9/12 lg:w-full text-sm leading-6 sm:text-18 sm:leading-6 font-bold font-space-grotesk text-gray-soft">
+                <h4 className="text-center w-[99%] md:w-9/12 lg:w-full text-sm leading-5 sm:text-18 sm:leading-6 font-bold font-space-grotesk text-gray-soft">
                   {ex.title}
                 </h4>
               </a>

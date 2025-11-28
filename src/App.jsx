@@ -27,6 +27,7 @@ function App() {
   const [someState, setSomeState] = useState(false);
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
+  const [modalText, setModalText] = useState("Сложный выбор?");
   const faqData = [
     {
       id: 1,
@@ -120,6 +121,7 @@ function App() {
       if (e.clientY <= 0) {
         popupShown = true;
         console.log("🟥 EXIT POPUP");
+        setModalText("Уже уходите?");
         setShow(true);
       }
     };
@@ -300,7 +302,7 @@ function App() {
               alt="logo img"
             />
             <h1 className="font-bold text-xl sm:text-3xl font-montserrat my-3">
-              Сложный выбор?
+              {modalText}
             </h1>
             <div className="my-2 text-18 sm:text-xl font-normal font-montserrat">
               Мы поможем! <br />

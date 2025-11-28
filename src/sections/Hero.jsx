@@ -46,15 +46,20 @@ export default function Hero() {
     console.log("Yuborildi:", phone);
   };
   return (
-    <div className="relative h-[calc(100vh-64px)] flex flex-col justify-start items-center overflow-hidden">
-      <div className="images relative top-0 w-full h-[calc(100vh-64px)] z-10">
+    <div className="relative h-screen md:h-[calc(100vh-64px)] flex flex-col justify-start items-center overflow-hidden mb-20">
+      <div className="images relative top-0 w-full h-full md:h-[calc(100vh-64px)] z-10">
         <img
-          className="absolute top-[10%] h-full -translate-x-1/2 w-[250%] max-w-none object-contain pointer-events-none md:bottom-auto md:top-0 md:left-0 md:translate-x-0 md:w-full md:h-full md:object-cover"
+          className="absolute hidden md:flex top-[10%] h-full -translate-x-1/2 w-[250%] max-w-none object-contain pointer-events-none md:bottom-auto md:top-0 md:left-0 md:translate-x-0 md:w-full md:h-full md:object-cover"
           src={HeroBgImg}
           alt=""
         />
+        <img
+          className="flex absolute md:hidden top-0 object-contain h-full left-5 scale-110"
+          src="https://static.tildacdn.com/tild3630-3135-4964-a561-366230663664/Container_1.webp"
+          alt=""
+        />
         <div className="absolute md:hidden top-0 left-0 z-10 w-full h-2/3 bg-linear-to-b from-[#fcfcfd] to-transparent pointer-events-none"></div>
-        <div className="z-30 absolute bottom-[18%] md:bottom-[10%] xl:bottom-[12%] left-[45%]">
+        <div className="z-30 absolute bottom-5 md:bottom-[10%] xl:bottom-[12%] left-[45%]">
           <div className="relative pointer-events-none max-sm:w-85 max-sm:h-85 sm:w-135 sm:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
             <div className="absolute inset-0 bg-black/50 rounded-full z-0"></div>
             <div className="absolute text-sharp cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-40 flex items-center justify-center">
@@ -100,13 +105,13 @@ export default function Hero() {
         </div>
       </div>
       <div className="container-base absolute top-0 z-20 mt-3 md:mt-10 xl:mt-[15%] 2xl:mt-[10%]">
-        <h1 className="text-secondary leading-8 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold text-center md:text-left">
+        <h1 className="text-secondary leading-10 sm:leading-14 lg:leading-16 w-full lg:w-754 text-32 sm:text-4xl md:text-5xl lg:text-58px font-arial font-bold text-center md:text-left">
           ПРОИЗВОДСТВО <br />{" "}
           <span className="text-nowrap inline-block">И ДОСТАВКА БЕТОНА</span>{" "}
           <br />
           <span className="font-normal">в Москве и МО</span>
         </h1>
-        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl mt-2 md:my-4">
+        <div className="font-normal text-center sm:text-left text-18 lg:text-2xl my-4">
           Напрямую с завода
           <strong className="ml-1">
             от 2 200 р/м3 по{" "}
@@ -116,7 +121,7 @@ export default function Hero() {
           </strong>
         </div>
         <div className="form">
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 mt-2 my-2">
+          <div className="flex flex-col sm:flex-row gap-5 my-4">
             <div className="phone">
               <PhoneNumberInput
                 className="h-76 lg:w-270 rounded-10"

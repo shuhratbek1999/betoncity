@@ -43,6 +43,7 @@
   --breakpoint-gl: 976px;
   --breakpoint-xs: 480px;
   --breakpoint-xd: 380px;
+  --breakpoint-ss: 300px;
 }
 
 @layer base {
@@ -176,7 +177,7 @@
   }
 }
 @utility container-base {
-  @apply w-full max-w-235 xl:max-w-340 mx-auto px-5;
+  @apply w-full max-w-235 xl:max-w-340 mx-auto px-2;
 }
 @layer utilities {
   .text-sharp svg text {
@@ -234,5 +235,7 @@
   text-rendering: geometricPrecision;
   text-transform: capitalize;
 }
-
+.text-size-adjust {
+  text-size-adjust: none;
+}
 @import "tailwindcss";

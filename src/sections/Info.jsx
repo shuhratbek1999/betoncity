@@ -35,14 +35,14 @@ const Info = () => {
     },
   ];
   return (
-    <div className="container-base -mt-28">
+    <div className="px-2.5 container-base -mt-10 md:-mt-28">
       <div className="info flex flex-col sm:items-center gap-2 sm:gap-16 h-auto">
         {informations.map((item, index) => (
           <div
             key={item.id}
             className={`${
               index % 2 != 0 ? "xl:flex-row-reverse" : " "
-            } flex w-full sm:w-10/12 lg:w-full gap-8 flex-col-reverse xl:flex-row xl:justify-between`}
+            } flex w-[110%] sm:w-10/12 lg:w-full gap-8 flex-col-reverse xl:flex-row xl:justify-between`}
           >
             <div className="w-full xl:w-[48%] lg:-mt-4">
               <h1 className="font-space-grotesk leading-10 xl:leading-16 font-bold text-32 lg:text-5xl text-secondary">
@@ -56,14 +56,16 @@ const Info = () => {
               </p>
             </div>
             <div
-              className={`images h-80 xl:h-[400px] w-full xl:w-[48%] border-[3px] border-orange rounded-10 relative`}
+              className={`images h-56 xl:h-[400px] w-[95%] xl:w-[48%] border-[3px] border-orange rounded-10 relative`}
             >
               <img
                 src={item.img}
                 alt={item.title}
                 className={`${
-                  index % 2 != 0 ? "left-4 -top-3" : "-left-4 -top-3"
-                } rounded-10 object-cover absolute h-full w-full`}
+                  index % 2 != 0
+                    ? "-left-3 md:left-4 -top-3"
+                    : "-left-3 md:-left-4 -top-3"
+                } rounded-10 object-cover absolute h-full w-full `}
               />
             </div>
           </div>

@@ -110,7 +110,7 @@ export default function Header() {
           </a>
 
           {/* Navigation */}
-          <nav className="hidden xl:flex items-center gap-16 font-medium">
+          <nav className="hidden xl:flex items-center gap-16 font-medium xl:px-4">
             {navItems.map((item, i) => (
               <div key={i} className="relative group">
                 {/* Main link */}

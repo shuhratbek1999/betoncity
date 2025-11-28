@@ -216,7 +216,7 @@ const Calculator = () => {
         <div
           className={`${
             btn == "6" ? "hidden" : "flex"
-          } section_top justify-between items-center`}
+          } section_top justify-between items-center relative`}
         >
           <h2 className="text-2xl font-bold font-space-grotesk text-secondary">
             {text}
@@ -224,14 +224,14 @@ const Calculator = () => {
           <img
             src="https://static.tildacdn.com/tild3736-3636-4338-b630-616138376662/solar_stars-line-duo.svg"
             alt="section img"
-            className="object-contain"
+            className="object-contain absolute right-0 top-10 md:top-0 md:right-0"
           />
         </div>
         <div className={`${btn == "6" ? "hidden" : "flex"} flex-col gap-2`}>
           <h4 className="text-base font-space-grotesk text-secondary">
             Готово: {percent}%
           </h4>
-          <div className="relative w-full h-[7px] bg-gray-200 rounded-full overflow-hidden">
+          <div className="relative w-10/12 md:w-full h-[7px] bg-gray-200 rounded-full overflow-hidden">
             <div
               className="absolute left-0 top-0 h-full bg-primary"
               style={{ width: "60px" }}
@@ -390,11 +390,11 @@ const Calculator = () => {
           </form>
         </div>
         <div
-          className={`footer w-full flex flex-col sm:flex-row justify-between pr-8 gap-4 mt-6 sm:mt-12 ${
+          className={`footer w-full flex flex-col sm:flex-row justify-between md:pr-8 gap-4 mt-6 sm:mt-12 ${
             btn == "6" ? "hidden" : "flex"
           }`}
         >
-          <div className="footer-text w-full sm:w-6/12 text-orange font-bold text-18 font-montserrat leading-5">
+          <div className="footer-text w-full hidden md:flex sm:w-6/12 text-orange font-bold text-18 font-montserrat leading-5">
             Укажите необходимую марку и объем - получите <br /> лучшее
             предложение на рынке!
           </div>
@@ -410,7 +410,11 @@ const Calculator = () => {
             >
               назад
             </Button>
-            <Button className="h-52 w-1/2 capitalize hover:bg-white hover:text-orange border border-orange rounded-10 bg-orange text-white">
+            <Button
+              className={`${
+                btn != "1" ? "w-1/2" : "w-full"
+              } h-52 md:w-1/2 capitalize hover:bg-white hover:text-orange border border-orange rounded-10 bg-orange text-white`}
+            >
               далее
             </Button>
           </div>

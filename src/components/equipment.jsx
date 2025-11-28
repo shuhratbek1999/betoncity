@@ -28,10 +28,10 @@ const Equipment = () => {
     <div className="container-base mb-12 lg:h-[600px] flex flex-col md:items-center lg:items-start lg:flex-row justify-center">
       <div className="info w-full md:w-10/12 lg:w-6/12">
         <h1 className="font-space-grotesk leading-8 lg:leading-14 text-center sm:text-left font-bold text-32 lg:text-5xl text-secondary">
-          У нас есть вся необходимая техника
+          У нас есть вся <br /> необходимая техника
         </h1>
-        <h4 className="font-space-grotesk leading-8 text-center sm:text-left text-2xl font-normal text-secondary my-2 sm:my-10">
-          Вам не нужно беспокоиться и дополнительно <br /> обращаться в другие
+        <h4 className="font-space-grotesk md:w-10/12 leading-8 text-center sm:text-left text-2xl font-normal text-secondary my-2 sm:my-10">
+          Вам не нужно беспокоиться и дополнительно обращаться в другие
           компании.
         </h4>
         <div className="foter flex gap-2 items-center">

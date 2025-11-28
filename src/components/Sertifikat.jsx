@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "./Button";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import Modal from "./Modal";
@@ -12,6 +12,19 @@ const Sertifikat = () => {
   const [modalCheck, setmodalCheck] = useState(false);
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const iframeRef = useRef(null);
+  const videoSrc =
+    "https://rutube.ru/play/embed/74783688f8e434fa874972298063a1c8?";
+  const handlePlay = () => {
+    setIsPlaying(true);
+
+    // iframe autoplay qo'shish (agar kerak bo'lsa src-ni update qilamiz)
+    // if (iframeRef.current) {
+    //   const src = iframeRef.current.src;
+    //   iframeRef.current.src = src + "&autoplay=1";
+    // }
+  };
   const validatePhone = () => {
     if (!phone) {
       setError("Введите номер телефона");
@@ -32,13 +45,44 @@ const Sertifikat = () => {
   return (
     <div className="container-base flex flex-col md:items-center xl:flex-row mt-20 md:gap-10 max-ss:scale-x-90">
       <div className="video w-full md:w-10/12 lg:w-full xl:w-1/2 h-[370px] border-[3px] border-orange rounded-10 relative">
+        {/* Video iframe */}
         <iframe
-          className="w-full h-full absolute -top-3 left-3 rounded-10"
-          src="https://rutube.ru/play/embed/a27b86b835dd875d82086de429cb9357/"
+          className="absolute -top-3 left-3 rounded-10"
+          src="https://rutube.ru/play/embed/74783688f8e434fa874972298063a1c8/"
           style={{ border: "none" }}
           allow="clipboard-write; autoplay"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
           allowFullScreen
         ></iframe>
+        {!isPlaying && (
+          <>
+            <img
+              src="https://static.tildacdn.com/tild6166-3233-4230-b133-396635353330/divytp-cued-thumbnai.png"
+              alt="preview"
+              className="absolute -top-3 left-3 w-full h-full object-cover rounded-10"
+            />
+            <button
+              onClick={handlePlay}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+              <svg
+                role="presentation"
+                width={70}
+                height={70}
+                viewBox="0 0 60 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx={30} cy={30} r={30} fill="black" />
+                <path
+                  d="M41 29.7495L24.0014 19.2495L24.0061 40.2493L41 29.7495Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </>
+        )}
       </div>
       <div className="sertifikat_info w-full md:w-10/12 lg:w-full xl:w-1/2">
         <img

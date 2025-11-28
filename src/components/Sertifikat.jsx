@@ -47,7 +47,7 @@ const Sertifikat = () => {
       <div className="video w-full md:w-10/12 lg:w-full xl:w-1/2 h-[370px] border-[3px] border-orange rounded-10 relative">
         {/* Video iframe */}
         <iframe
-          className="absolute -top-3 left-3 rounded-10 w-full h-full"
+          className="absolute -top-3 left-3 rounded-10 w-full h-[370px]"
           src="https://rutube.ru/play/embed/74783688f8e434fa874972298063a1c8/"
           style={{ border: "none" }}
           allow="clipboard-write; autoplay"

@@ -54,12 +54,12 @@ export default function Hero() {
           alt=""
         />
         <img
-          className="flex absolute md:hidden top-0 object-contain h-full left-5 scale-110"
+          className="flex absolute md:hidden top-8 object-contain h-full left-5 scale-110"
           src="https://static.tildacdn.com/tild3630-3135-4964-a561-366230663664/Container_1.webp"
           alt=""
         />
         <div className="absolute md:hidden top-0 left-0 z-10 w-full h-2/3 bg-linear-to-b from-[#fcfcfd] to-transparent pointer-events-none"></div>
-        <div className="z-30 absolute bottom-5 md:bottom-[10%] xl:bottom-[12%] left-[45%]">
+        <div className="z-30 absolute bottom-5 md:bottom-[10%] xl:bottom-[8%] left-[45%]">
           <div className="relative pointer-events-none max-sm:w-85 max-sm:h-85 sm:w-135 sm:h-135 md:-bottom-8/12 max-md:-bottom-5/12 flex items-center justify-center">
             <div className="absolute inset-0 bg-black/50 rounded-full z-0"></div>
             <div className="absolute text-sharp cursor-pointer w-12 h-12 md:w-85 md:h-85 rounded-full z-40 flex items-center justify-center">

@@ -33,7 +33,7 @@ const Experience = () => {
       <h4 className="text-orange font-bold font-montserrat text-[15px] md:text-18 text-center my-6">
         БЕТОНСИТИСТРОЙ
       </h4>
-      <h1 className="text-secondary text-xl whitespace-nowrap lg:text-5xl font-bold md:text-center">
+      <h1 className="text-secondary -ml-2 tracking-tight text-xl w-[108%] lg:text-5xl font-bold md:text-center">
         Надежный партнер с большим опытом
       </h1>
 

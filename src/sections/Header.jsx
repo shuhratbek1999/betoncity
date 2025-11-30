@@ -157,7 +157,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center max-sm:w-full justify-between max-sm:ml-12 lg:gap-4">
-            <div className="flex flex-col gap-x-3">
+            <div className="flex flex-col gap-x-3 ml-2 md:ml-0">
               <a
                 href="tel:+74952666924"
                 className="hover:text-secondary/75 underline text-base"

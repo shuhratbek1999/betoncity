@@ -44,10 +44,10 @@ const Sertifikat = () => {
   };
   return (
     <div className="container-base flex flex-col md:items-center xl:flex-row mt-20 md:gap-10 max-ss:scale-x-90">
-      <div className="video w-full md:w-10/12 lg:w-full xl:w-1/2 h-[370px] border-[3px] border-orange rounded-10 relative">
+      <div className="video w-full md:w-10/12 lg:w-full xl:w-1/2 h-[212px] md:h-[370px] border-[3px] border-orange rounded-10 relative">
         {/* Video iframe */}
         <iframe
-          className="absolute -top-3 left-3 rounded-10 w-full h-[370px]"
+          className="absolute -left-3 -top-3 md:left-3 rounded-10 w-full h-[212px] md:h-[370px]"
           src="https://rutube.ru/play/embed/74783688f8e434fa874972298063a1c8/"
           style={{ border: "none" }}
           allow="clipboard-write; autoplay"
@@ -60,7 +60,7 @@ const Sertifikat = () => {
             <img
               src="https://static.tildacdn.com/tild6166-3233-4230-b133-396635353330/divytp-cued-thumbnai.png"
               alt="preview"
-              className="absolute -top-3 left-3 w-full h-full object-cover rounded-10"
+              className="absolute -left-3 -top-3 md:left-3 w-full h-full object-cover rounded-10"
             />
             <button
               onClick={handlePlay}
@@ -94,11 +94,11 @@ const Sertifikat = () => {
           Наш товар сертифицирован и соответствует международным стандартам и
           ГОСТ.
         </h1>
-        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-[110%] md:w-full">
+        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-full md:w-full">
           Наша компания более 5 лет производит качественный бетон по доступным
           ценам.
         </p>
-        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-[110%] md:w-full">
+        <p className="text-base font-normal font-space-grotesk text-secondary my-4 w-full md:w-full">
           Он полностью экологичен и безопасен, вы можете использовать его не
           только промышленных зданиях, но и в частных домах, не боясь за свое
           здоровье.

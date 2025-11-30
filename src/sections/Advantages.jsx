@@ -43,12 +43,12 @@ const Advantages = () => {
       <h1 className="text-center font-space-grotesk text-32 lg:text-5xl text-secondary font-bold">
         Преимущества
       </h1>
-      <div className=" my-6 flex flex-col md:flex-row justify-center">
-        <h1 className="whitespace-nowrap text-center text-xl md:text-22 font-montserrat font-normal text-gray-soft">
+      <div className=" my-6 flex flex-col justify-center">
+        <h1 className="tracking-tighter text-center -ml-2 md:ml-0 text-xl md:text-22 font-montserrat font-normal text-gray-soft">
           {" "}
           Смотрите чем мы отличаемся от
         </h1>
-        <h1 className="whitespace-nowrap text-center text-xl md:text-22 font-montserrat font-normal text-gray-soft">
+        <h1 className=" text-center tracking-tighter w-[105%] -ml-2 md:ml-0 text-xl md:text-22 font-montserrat font-normal text-gray-soft">
           других заводов-производителей
         </h1>
       </div>
@@ -67,7 +67,7 @@ const Advantages = () => {
             <img
               src={a.img}
               alt={a.title}
-              className="lg:w-8/12 w-full lg:h-200 object-contain"
+              className="md:w-8/12 w-full md:h-200 object-contain"
             />
 
             <h2 className="text-center font-space-grotesk whitespace-nowrap text-2xl text-secondary font-bold md:w-8/12 my-2">
@@ -76,7 +76,7 @@ const Advantages = () => {
               {a.title.split(",")[1]}
             </h2>
 
-            <p className="text-center text-base font-normal font-space-grotesk text-secondary leading-5">
+            <p className="text-center w-full md:w-1/2 lg:w-full text-base font-normal font-space-grotesk text-secondary leading-5">
               {a.text}
             </p>
           </div>

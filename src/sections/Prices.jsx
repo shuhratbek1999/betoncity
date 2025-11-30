@@ -348,7 +348,7 @@ const Prices = () => {
   }, []);
   return (
     <div className="container-base mt-10" id="Цены">
-      <h1 className="lg:text-5xl font-bold font-space-grotesk text-center">
+      <h1 className="lg:text-5xl text-32 font-bold font-space-grotesk text-center">
         Цены на бетон в Москве и МО
       </h1>
       <div className="buttons  flex md:hidden items-center gap-4 my-6 max-xl:overflow-x-scroll no-scrollbar">
